@@ -1,7 +1,12 @@
-console.log("START FROM GIT 4");
+console.log("START FROM GIT 5");
 
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
+
+        // Create styles for form
+        var styDiv = document.createElement('div');
+        styDiv.innerHTML = '<style>div#formOverlayBGContainer{background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
+        document.body.appendChild(styDiv);
 
         // Create form Button for form
         var div = document.createElement('div');
@@ -18,69 +23,12 @@ console.log("START FROM GIT 4");
             }
         });
 
-        // Create styles for form
-        var styDiv = document.createElement('div');
-        styDiv.innerHTML = '<style>div#formOverlayBGContainer{background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
-        document.body.appendChild(styDiv);
-
         // Create form Overlay BG Container for form
         var formOverlayBGContainer = document.createElement('div');
         formOverlayBGContainer.className = 'formOverlayBGContainer';
         formOverlayBGContainer.id = 'formOverlayBGContainer';
-        formOverlayBGContainer.innerHTML = '<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>';
+        formOverlayBGContainer.innerHTML = `<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>`;
         document.body.appendChild(formOverlayBGContainer);
-
-
-        // Create a form dynamically
-        var form = document.createElement("form");
-        form.setAttribute("method", "post");
-        form.setAttribute("id", "form1913");
-        form.setAttribute("class", "form js--module-formSniff js--module-formDefault  js--moduleLoader--loaded");
-        form.setAttribute("name", "copyOf2021USELQUVSRTLForm-1645212545248");
-        form.setAttribute("action", "https://s651376838.t.eloqua.com/e/f2");
-
-
-        var br = document.createElement("br");
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("firstName", "First Name", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("title", "Title", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("company", "Company", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("busPhone", "Business Phone", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("city", "City", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
-        form.appendChild(br.cloneNode());
-        form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
-        form.appendChild(br.cloneNode());
-
-        var subBtn = document.createElement("input");
-        subBtn.setAttribute("type", "submit");
-        subBtn.setAttribute("value", "Submit");
-        form.appendChild(subBtn);
-        form.appendChild(br.cloneNode());
-        document.getElementById("formOverlayContainer").appendChild(form);
-
-        form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
-        form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));
-        form.appendChild(createFormEl("elqCampaignId", "elqCampaignId", "hidden", ""));
-        form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
-        form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
-        form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
-        form.appendChild(createFormEl("EngagementType", "", "hidden", ""));
-        form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
-        form.appendChild(createFormEl("LoB", "LoB", "hidden", ""));
-        form.appendChild(createFormEl("source", "source", "hidden", ""));
-        form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
-        form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
-        form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
 
         document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
         document.getElementById("LoB").value = document.location.pathname.split("/")[1];
@@ -228,4 +176,4 @@ console.log("START FROM GIT 4");
     }
 
 
-console.log("END FROM GIT 4");
+console.log("END FROM GIT 5");

@@ -1,4 +1,4 @@
-console.log("START FROM GIT 6");
+console.log("START FROM GIT 7");
 
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
@@ -27,177 +27,60 @@ console.log("START FROM GIT 6");
         var formOverlayBGContainer = document.createElement('div');
         formOverlayBGContainer.className = 'formOverlayBGContainer';
         formOverlayBGContainer.id = 'formOverlayBGContainer';
-        formOverlayBGContainer.innerHTML = `
-        <div id="formOverlayContainer" class="form">
-        <p class="message">Please tell us what you would like to know about.<br></p>
-        <form novalidate="" method="POST" class="form js--module-formSniff js--module-formDefault  js--moduleLoader--loaded" action="/api/forms/eloqua" id="lease_maintenance" data="">
-
-    <div class="max-width">
-
-            <h2 class="heading-2 form__heading">Let Us Know How We Can Help</h2>
-
-
-        <ul class="message errors-list hidden">
-        </ul>
-
-        <div class="message success hidden">
-        </div>
-
-<div class="form__copy col-xs-12">
-  <p>Every business is unique and we would love to talk about how we can help yours. Please tell us a little about yourself so we can make sure the right person gives you a call.</p>
-</div>
-<fieldset class="form-group col-xs-12 ">
-
-    <legend class="legend visuallyhidden">Tell us about yourself</legend>
-
-<div class="form__input col-xs-12 col-md-6 ">
-    <label for="firstName" class="visuallyhidden">first-name</label>
-    <input type="text" class="form-control " id="firstName" name="firstName" placeholder="First name *" title="'first-name'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?" data-error-div="firstName-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-        <div id="firstName-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="firstName"></label>
-</div><div class="form__input col-xs-12 col-md-6 ">
-    <label for="lastName" class="visuallyhidden">last-name</label>
-    <input type="text" class="form-control " id="lastName" name="lastName" placeholder="Last name *" title="'last-name'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?" data-error-div="lastName-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-        <div id="lastName-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="lastName"></label>
-</div><div class="form__input col-xs-12 col-md-6 ">
-    <label for="emailAddress" class="visuallyhidden">Email</label>
-    <input type="text" class="form-control " id="emailAddress" name="emailAddress" placeholder="Email *" title="'Email'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" data-error-div="emailAddress-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-        <div id="emailAddress-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="emailAddress"></label>
-</div><div class="form__input col-xs-12  col-md-3">
-    <label for="busPhone" class="visuallyhidden">phone</label>
-    <input type="text" class="form-control " id="busPhone" name="busPhone" placeholder="Phone *" title="'phone'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" data-error-div="busPhone-error" data-required-error-text="Please format your phone number, ex. 1112223333" data-pattern-error-text="10-digit phone required. Please format your phone number, ex. 1112223333" value="" autocomplete="off">
-
-        <div id="busPhone-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="busPhone"></label>
-</div><div class="form__input col-xs-12  col-md-3">
-    <label for="zipPostal" class="visuallyhidden">zip</label>
-    <input type="text" class="form-control " id="zipPostal" name="zipPostal" placeholder="Zip *" title="'zip'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="((?!(0))[0-9]{5})" data-error-div="zipPostal-error" data-required-error-text="Please use 5-digit ZIP Code, ex. 12345" data-pattern-error-text="5-digit ZIP Code is required." value="" autocomplete="on">
-
-        <div id="zipPostal-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="zipPostal"></label>
-</div><div class="form__input col-xs-12 col-md-6 ">
-    <label for="company" class="visuallyhidden">company</label>
-    <input type="text" class="form-control " id="company" name="company" placeholder="Company *" title="'company'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z0-9-,.!&amp;'/?\s]+" data-error-div="company-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-        <div id="company-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-    <label class="form-field-help" for="company"></label>
-</div><div class="form__input col-xs-12 col-md-6 ">
-    <label for="title" class="visuallyhidden">title</label>
-    <input type="text" class="form-control " id="title" name="title" placeholder="Title*" title="'title'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z0-9-,.!&amp;'/?\s]+" data-error-div="title-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-    <label class="form-field-help" for="title"></label>
-</div>    
-
-<input type="hidden" name="formPageUrl" value="/landing-test/form-test"></fieldset>
-<fieldset class="form-group col-xs-12 ">
-
-    <legend class="legend "></legend>
-
-<input name="sfid" type="hidden" value="7014X000002P5n6QAC">
-<input name="USOURCE" type="hidden" value="">
-<input name="UMEDIUM" type="hidden" value="">
-<input name="UCAMPAIGN" type="hidden" value="">
-<input name="UCONTENT" type="hidden" value="">
-<input name="gclid" type="hidden" value="">
-<input name="atsuserid" type="hidden" value="">
-<input name="MemberStatus" type="hidden" value="">
-<input name="VISITS" type="hidden" value="">
-<input name="ILANDPAGE" type="hidden" value="">
-<input name="IREFERRER" type="hidden" value="">
-<input name="LREFERRER" type="hidden" value="">
-<input name="EngagementType" type="hidden" value="">
-<input name="formPageUrl" type="hidden" value="">
-<input name="UTERM" type="hidden" value="">
-<input name="" type="hidden" value="">
-    
-
-<input type="hidden" name="formPageUrl" value="/landing-test/form-test"></fieldset>
-<fieldset class="form-group col-xs-12 col-md-6">
-
-    <legend class="legend ">How soon are you ready?</legend>
-
-<div class="radio-group c-inputs-stacked stacked">
-<label class="c-input c-radio" for="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-15E003B20ACF4B6D9DCAECF4F4BB97B9">
-    <input onkeydown="debugger;[37, 38, 39, 40].includes(event.keyCode) &amp;&amp; event.preventDefault(); ((event.keyCode == '38' &amp;&amp; this.parentElement.previousElementSibling.children[0].focus()) || (event.keyCode == '40' &amp;&amp; this.parentElement.nextElementSibling.children[0].focus()));" type="radio" name="DecisionTime" value="Ready Now" id="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-15E003B20ACF4B6D9DCAECF4F4BB97B9">
-    <span class="c-indicator"></span>
-    Ready Now
-</label>
-<label class="c-input c-radio" for="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-BC637C26C1BE49D59CE2E5F32AA099E3">
-    <input onkeydown="debugger;[37, 38, 39, 40].includes(event.keyCode) &amp;&amp; event.preventDefault(); ((event.keyCode == '38' &amp;&amp; this.parentElement.previousElementSibling.children[0].focus()) || (event.keyCode == '40' &amp;&amp; this.parentElement.nextElementSibling.children[0].focus()));" type="radio" name="DecisionTime" value="Within Next Month" id="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-BC637C26C1BE49D59CE2E5F32AA099E3">
-    <span class="c-indicator"></span>
-    Within Next Month
-</label>
-<label class="c-input c-radio" for="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-6690D55722B945F9961AA1A1ADC5B3AF">
-    <input onkeydown="debugger;[37, 38, 39, 40].includes(event.keyCode) &amp;&amp; event.preventDefault(); ((event.keyCode == '38' &amp;&amp; this.parentElement.previousElementSibling.children[0].focus()) || (event.keyCode == '40' &amp;&amp; this.parentElement.nextElementSibling.children[0].focus()));" type="radio" name="DecisionTime" value="1-3 Months" id="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-6690D55722B945F9961AA1A1ADC5B3AF">
-    <span class="c-indicator"></span>
-    1-3 Months
-</label>
-<label class="c-input c-radio" for="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-2FD82F8E6A1E417084CFCE0874C09625">
-    <input onkeydown="debugger;[37, 38, 39, 40].includes(event.keyCode) &amp;&amp; event.preventDefault(); ((event.keyCode == '38' &amp;&amp; this.parentElement.previousElementSibling.children[0].focus()) || (event.keyCode == '40' &amp;&amp; this.parentElement.nextElementSibling.children[0].focus()));" type="radio" name="DecisionTime" value="3+ Months" id="3BE8B3B24D354AC88C7D3A9F3BA9BF7D-DecisionTime-2FD82F8E6A1E417084CFCE0874C09625">
-    <span class="c-indicator"></span>
-    3+ Months
-</label>
-</div>    
-
-<input type="hidden" name="formPageUrl" value="/landing-test/form-test"></fieldset>
-<div class="form__copy col-xs-12">
-  <p><em>All fields marked with an asterisk (*) are required.</em></p>
-</div>
-<div class="form__copy col-xs-12">
-  <style>
-.disclaimer {
-    margin-top: 20px;
-}
-</style>
-<div class="disclaimer">
-<p style="margin: 0in 0in 0.0001pt; text-align: right;"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">We may use the information you provide to contact you about Ryder System, Inc.<br>
-We do not share/sell your data. To learn more, view our <a href="https://ryder.com/privacy-policy" target="_blank" style="color:blue; text-decoration:underline">privacy policy</a>.</span></span></p>
-</div>
-
-</div>
-            <div id="A682F5E48653423AAD5512DF796936BD-cptch-48" class="g-recaptcha-ctnr"></div>
-    <button id="A682F5E48653423AAD5512DF796936BD" role="button" class="button " type="submit" data-text="submit"> submit</button>
-
-            <input type="hidden" name="hostedPageUrl" value="/connect">
-            <input type="hidden" name="form-id" value="{3D740B23-4C8D-4118-BC77-5AFF26990776}">
-            <input type="hidden" name="apply-recaptcha" value="true">
-            <input type="hidden" name="LREFERRER" id="lreferrer" value="">
-            <input type="hidden" name="IREFERRER" id="ireferrer" value="">
-            <input type="hidden" name="ILANDPAGE" id="ilandpage" value="">
-
-    </div>
-<div class="loader loader-invisible"><div class="loading"></div></div><input type="hidden" name="USOURCE" value="google"><input type="hidden" name="UMEDIUM" value="cpc"><input type="hidden" name="UCAMPAIGN" value="2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen"><input type="hidden" name="UCONTENT" value="usedtrucks"><input type="hidden" name="UTERM" value="C"><input type="hidden" name="UDEVICE" value="ipohone_12"><input type="hidden" name="VISITS" value="3"></form>
-        </div>`;
+        formOverlayBGContainer.innerHTML = '<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>';
         document.body.appendChild(formOverlayBGContainer);
+
+
+        // Create a form dynamically
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("id", "form1913");
+        form.setAttribute("class", "form js--module-formSniff js--module-formDefault  js--moduleLoader--loaded");
+        form.setAttribute("name", "copyOf2021USELQUVSRTLForm-1645212545248");
+        form.setAttribute("action", "https://s651376838.t.eloqua.com/e/f2");
+
+
+        var br = document.createElement("br");
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("firstName", "First Name", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("title", "Title", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("company", "Company", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("busPhone", "Business Phone", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("city", "City", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
+        form.appendChild(br.cloneNode());
+        form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
+        form.appendChild(br.cloneNode());
+
+        var subBtn = document.createElement("input");
+        subBtn.setAttribute("type", "submit");
+        subBtn.setAttribute("value", "Submit");
+        form.appendChild(subBtn);
+        form.appendChild(br.cloneNode());
+        document.getElementById("formOverlayContainer").appendChild(form);
+
+        form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
+        form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));
+        form.appendChild(createFormEl("elqCampaignId", "elqCampaignId", "hidden", ""));
+        form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
+        form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
+        form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
+        form.appendChild(createFormEl("EngagementType", "", "hidden", ""));
+        form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
+        form.appendChild(createFormEl("LoB", "LoB", "hidden", ""));
+        form.appendChild(createFormEl("source", "source", "hidden", ""));
+        form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
+        form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
+        form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
 
         document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
         document.getElementById("LoB").value = document.location.pathname.split("/")[1];
@@ -345,4 +228,4 @@ We do not share/sell your data. To learn more, view our <a href="https://ryder.c
     }
 
 
-console.log("END FROM GIT 6");
+console.log("END FROM GIT 7");

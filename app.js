@@ -15,6 +15,21 @@ console.log("START FROM GIT 2");
         formOverlayBGContainer.innerHTML = '<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>';
         document.body.appendChild(formOverlayBGContainer);
 
+        // Create form Button for form
+        var div = document.createElement('div');
+        div.className = 'formTstMsg';
+        div.id = 'formTstMsg';
+        div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:20px; font-size: xx-large !important;';
+        div.innerHTML = '<button class="button--connect js--module-overlayLink js--moduleLoader--loaded">FORM TEST BUTTON</button>';
+        document.body.appendChild(div);
+        document.getElementById("formTstMsg").addEventListener("click", function () {
+            if (document.getElementById("formOverlayBGContainer").style.display == "none") {
+                document.getElementById("formOverlayBGContainer").style.display = "block";
+            } else {
+                document.getElementById("formOverlayBGContainer").style.display = "none";
+            }
+        });
+
         // Create a form dynamically
         var form = document.createElement("form");
         form.setAttribute("method", "post");
@@ -74,19 +89,6 @@ console.log("START FROM GIT 2");
         document.getElementById("FormpageURL").value = location.pathname;
         document.getElementById("UDEVICE").value = deviceInfo();
 
-        var div = document.createElement('div');
-        div.className = 'formTstMsg';
-        div.id = 'formTstMsg';
-        div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:20px; font-size: xx-large !important;';
-        div.innerHTML = '<button class="button--connect js--module-overlayLink js--moduleLoader--loaded">FORM TEST BUTTON</button>';
-        document.body.appendChild(div);
-        document.getElementById("formTstMsg").addEventListener("click", function () {
-            if (document.getElementById("formOverlayBGContainer").style.display == "none") {
-                document.getElementById("formOverlayBGContainer").style.display = "block";
-            } else {
-                document.getElementById("formOverlayBGContainer").style.display = "none";
-            }
-        });
     }
 
     function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {

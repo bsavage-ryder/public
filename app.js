@@ -3,18 +3,6 @@ console.log("START FROM GIT 2");
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
 
-        // Create styles for form
-        var styDiv = document.createElement('div');
-        styDiv.innerHTML = '<style>div#formOverlayBGContainer{background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
-        document.body.appendChild(styDiv);
-
-        // Create form Overlay BG Container for form
-        var formOverlayBGContainer = document.createElement('div');
-        formOverlayBGContainer.className = 'formOverlayBGContainer';
-        formOverlayBGContainer.id = 'formOverlayBGContainer';
-        formOverlayBGContainer.innerHTML = '<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>';
-        document.body.appendChild(formOverlayBGContainer);
-
         // Create form Button for form
         var div = document.createElement('div');
         div.className = 'formTstMsg';
@@ -29,6 +17,19 @@ console.log("START FROM GIT 2");
                 document.getElementById("formOverlayBGContainer").style.display = "none";
             }
         });
+        
+        // Create styles for form
+        var styDiv = document.createElement('div');
+        styDiv.innerHTML = '<style>div#formOverlayBGContainer{background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
+        document.body.appendChild(styDiv);
+
+        // Create form Overlay BG Container for form
+        var formOverlayBGContainer = document.createElement('div');
+        formOverlayBGContainer.className = 'formOverlayBGContainer';
+        formOverlayBGContainer.id = 'formOverlayBGContainer';
+        formOverlayBGContainer.innerHTML = '<div id="formOverlayContainer" class="form"><p class="message">Please tell us what you would like to know about.<br></p></div>';
+        document.body.appendChild(formOverlayBGContainer);
+
 
         // Create a form dynamically
         var form = document.createElement("form");

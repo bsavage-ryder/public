@@ -1,8 +1,5 @@
-console.log("START FROM GIT");
+console.log("START FROM GIT 2");
 
-  
-  
-  
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
 
@@ -226,4 +223,6 @@ console.log("START FROM GIT");
             return ('Desktop - ' + navigator.userAgent);
         }
     }
-console.log("END FROM GIT");
+
+
+console.log("END FROM GIT 2");

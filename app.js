@@ -1,5 +1,5 @@
 
-let versionVar = "101";
+let versionVar = "102";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -183,6 +183,8 @@ console.log("                 - Build Form");
 
     }
 
+    console.log("END FROM GIT " + versionVar);
+
     function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
         console.log("                       - ADD " + nameVar + " to form");
         var x = document.createElement("input");
@@ -350,4 +352,3 @@ console.log("                 - Build Form");
 
 
     
-console.log("END FROM GIT " + versionVar);

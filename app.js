@@ -1,4 +1,4 @@
-console.log("START FROM GIT 011");
+console.log("START FROM GIT 012");
 
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
@@ -12,7 +12,7 @@ console.log("START FROM GIT 011");
         var div = document.createElement('div');
         div.className = 'formTstMsg';
         div.id = 'formTstMsg';
-        div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:20px; font-size: xx-large !important;';
+        div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:20px; font-size: 18px !important;';
         div.innerHTML = '<button class="button--connect js--module-overlayLink js--moduleLoader--loaded">FORM TEST BUTTON</button>';
         document.body.appendChild(div);
         document.getElementById("formTstMsg").addEventListener("click", function () {
@@ -91,7 +91,7 @@ console.log("START FROM GIT 011");
         /* 
             values will be one of the following:
                 - ContactMe
-                - Promo
+                - Promo - completed form on lease promo page
                 - Event Attendee
                 - Event
                 - Download
@@ -99,7 +99,20 @@ console.log("START FROM GIT 011");
         */
         form.appendChild(createFormEl("EngagementType", "", "hidden", "ContactMe"));
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
+
+        /* 
+            values will be one of the following:
+                - ryder.com = 
+                - lease if on lease page
+                - reservations.ryder.com rental if on reservations
+                - ryder.com/used-trucks
+                - ryder.com/supply-chain-management
+                - ryder.com/solutions/dedicated-transportation
+                - ryder.com/technology-innovations
+        */
         form.appendChild(createFormEl("LoB", "LoB", "hidden", ""));
+
+
         form.appendChild(createFormEl("source", "source", "hidden", ""));
         form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
         form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
@@ -251,4 +264,4 @@ console.log("START FROM GIT 011");
     }
 
 
-console.log("END FROM GIT 011");
+console.log("END FROM GIT 012");

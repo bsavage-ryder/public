@@ -1,5 +1,5 @@
 
-let versionVar = "030";
+let versionVar = "031";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -65,17 +65,8 @@ document.querySelectorAll('form').forEach(function (element) {
 });
 
 
-
-
-
-
-
-
-
-
-
 // Create styles for form
-if (location.pathname == "/landing-test/form-test") {
+//if (location.pathname == "/landing-test/form-test") {
 
     // Create styles for form
     var styDiv = document.createElement('div');
@@ -186,7 +177,7 @@ if (location.pathname == "/landing-test/form-test") {
     document.getElementById("FormpageURL").value = location.pathname;
     document.getElementById("UDEVICE").value = deviceInfo();
 
-}
+//}
 
 function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
     var x = document.createElement("input");

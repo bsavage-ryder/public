@@ -1,4 +1,4 @@
-console.log("START FROM GIT 010");
+console.log("START FROM GIT 011");
 
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
@@ -251,4 +251,4 @@ console.log("START FROM GIT 010");
     }
 
 
-console.log("END FROM GIT 010");
+console.log("END FROM GIT 011");

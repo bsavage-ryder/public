@@ -1,5 +1,5 @@
 
-let versionVar = "018";
+let versionVar = "019";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -165,22 +165,14 @@ document.querySelectorAll('form').forEach(function (element) {
 
         /* EngagementType */
         form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", getEngagementType()));
-
         // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
+
 
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
 
-        /* LoB
-            values will be one of the following:
-                - ryder.com = 
-                - lease if on lease page
-                - reservations.ryder.com rental if on reservations
-                - ryder.com/used-trucks
-                - ryder.com/supply-chain-management
-                - ryder.com/solutions/dedicated-transportation
-                - ryder.com/technology-innovations
-        */
+        /* LoB */
         form.appendChild(createFormEl("LoB", "LoB", "hidden", getlineOfBusiness()));
+        // document.getElementById("LoB").value = document.location.pathname.split("/")[1];
 
 
         form.appendChild(createFormEl("source", "source", "hidden", ""));
@@ -188,7 +180,6 @@ document.querySelectorAll('form').forEach(function (element) {
         form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
         form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
 
-        document.getElementById("LoB").value = document.location.pathname.split("/")[1];
         document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
         document.getElementById("IREFERRER").value = getCookie("__lotl");
         document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
@@ -312,6 +303,16 @@ document.querySelectorAll('form').forEach(function (element) {
     }
 
     function getlineOfBusiness(){
+        /* LoB
+            values will be one of the following:
+                - ryder.com = 
+                - lease if on lease page
+                - reservations.ryder.com rental if on reservations
+                - ryder.com/used-trucks
+                - ryder.com/supply-chain-management
+                - ryder.com/solutions/dedicated-transportation
+                - ryder.com/technology-innovations
+        */
         let lob = "";
         lob = (location.pathname.includes("preventive-maintenance")) ? "preventive-maintenance" : "unknown";
         lob = (location.pathname.includes("supply-chain-management")) ? "supply-chain-management" : "unknown";

@@ -1,4 +1,47 @@
-console.log("START FROM GIT 012");
+/*
+
+
+    Eloqua Form Information:
+
+        Test Form-TB
+        https://secure.p01.eloqua.com/Main.aspx#forms&id=1913
+
+    Sitecore Information:
+
+
+        http://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
+
+        http://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
+    
+    Test Page Information:
+
+        form-test - Ryder
+        http://prev.new.ryder.com/landing-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_brianTest=Brian%20is%20testing%20this&utm_device=ipohone_12&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE&utm_brianTest=Brian%20is%20testing%20this
+
+        http://prev.new.ryder.com/form-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_device=ipohone_12&VISITS=1&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE
+        
+        PARMS
+            utm_source=google
+            &utm_medium=cpc 
+            &utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen 
+            &utm_content=usedtrucks 
+            &utm_term=C 
+            &utm_device=ipohone_12 
+            &VISITS=1 
+            &sfid=1111d000000xstBBBBQ 
+            &gclid=mcid-value-is-here 
+            &mcid=mcid-value-is-here
+
+http://prev.new.ryder.com/form-test?utm_source=google
+&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&UCONTENT=usedtrucks&utm_term=C
+&utm_brianTest=Brian%20is%20testing%20this&utm_device=ipohone_12&VISITS=1&sfid=1111d000000xstBBBBQ&GCLID=GCLID_VALUE&MCID=MCID_VALUE
+
+
+*/
+
+
+
+console.log("START FROM GIT 014");
 
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
@@ -97,7 +140,7 @@ console.log("START FROM GIT 012");
                 - Download
                 - Blog
         */
-        form.appendChild(createFormEl("EngagementType", "", "hidden", "ContactMe"));
+        form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", "ContactMe"));
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
 
         /* 
@@ -118,7 +161,7 @@ console.log("START FROM GIT 012");
         form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
         form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
 
-        document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
+        // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
         document.getElementById("LoB").value = document.location.pathname.split("/")[1];
         document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
         document.getElementById("IREFERRER").value = getCookie("__lotl");
@@ -264,4 +307,4 @@ console.log("START FROM GIT 012");
     }
 
 
-console.log("END FROM GIT 012");
+console.log("END FROM GIT 014");

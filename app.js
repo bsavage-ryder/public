@@ -1,5 +1,5 @@
 
-let versionVar = "017";
+let versionVar = "018";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -163,16 +163,9 @@ document.querySelectorAll('form').forEach(function (element) {
         form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
         form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
 
-        /* EngagementType
-            values will be one of the following:
-                - ContactMe
-                - Promo - completed form on lease promo page
-                - Event Attendee
-                - Event
-                - Download
-                - Blog
-        */
-        form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", "ContactMe"));
+        /* EngagementType */
+        form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", getEngagementType()));
+
         // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
 
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
@@ -187,7 +180,7 @@ document.querySelectorAll('form').forEach(function (element) {
                 - ryder.com/solutions/dedicated-transportation
                 - ryder.com/technology-innovations
         */
-        form.appendChild(createFormEl("LoB", "LoB", "hidden", lineOfBusiness()));
+        form.appendChild(createFormEl("LoB", "LoB", "hidden", getlineOfBusiness()));
 
 
         form.appendChild(createFormEl("source", "source", "hidden", ""));
@@ -318,7 +311,7 @@ document.querySelectorAll('form').forEach(function (element) {
         }
     }
 
-    function get lineOfBusiness(){
+    function getlineOfBusiness(){
         let lob = "";
         lob = (location.pathname.includes("preventive-maintenance")) ? "preventive-maintenance" : "unknown";
         lob = (location.pathname.includes("supply-chain-management")) ? "supply-chain-management" : "unknown";
@@ -329,4 +322,22 @@ document.querySelectorAll('form').forEach(function (element) {
         return lob;
     }
 
+    function getEngagementType(){
+        /* EngagementType
+            values will be one of the following:
+                - ContactMe
+                - Promo - completed form on lease promo page
+                - Event Attendee
+                - Event
+                - Download
+                - Blog
+        */
+        let lob = "";
+        lob =   (location.pathname.includes("promo")) ? "Promo" : 
+                (location.pathname.includes("Event")) ? "Event" : 
+                (location.pathname.includes("Download")) ? "Download" : 
+                (location.pathname.includes("Blog")) ? "Blog" : "ContactMe";
+        return lob;
+    }
+    
 console.log("END FROM GIT " + versionVar);

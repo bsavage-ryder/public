@@ -43,6 +43,36 @@ http://prev.new.ryder.com/form-test?utm_source=google
 
 console.log("START FROM GIT 014");
 
+
+    
+document.querySelectorAll('a').forEach(function (element) {
+    var href = element.getAttribute("href");
+    var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
+    // console.log(href);
+    if (href.indexOf("/") === 0 || arr.indexOf(href) > -1) { //this may need to be revised, not sure if this is the intention
+        element.setAttribute("href", href + "?" + location.search.substring(1));
+    }
+});
+
+document.querySelectorAll('form').forEach(function (element) {
+    var action = element.getAttribute("action");
+    var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
+    // console.log(action);
+    // if (action.indexOf("/") === 0 || arr.indexOf(action) > -1) { //this may need to be revised, not sure if this is the intention
+    element.setAttribute("action", action + "?" + location.search.substring(1));
+    //}
+});
+
+
+
+
+
+
+
+
+
+
+
     // Create styles for form
     if (location.pathname == "/landing-test/form-test") {
 
@@ -198,27 +228,6 @@ console.log("START FROM GIT 014");
         }
         return select;
     }
-    document.querySelectorAll('a').forEach(function (element) {
-        var href = element.getAttribute("href");
-        var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-        // console.log(href);
-        if (href.indexOf("/") === 0 || arr.indexOf(href) > -1) { //this may need to be revised, not sure if this is the intention
-            element.setAttribute("href", href + "?" + location.search.substring(1));
-        }
-    });
-    // console.log("      - LOADED PARMS TO LINKS SCRIPTS");
-
-
-    // console.log("LOAD FORM ACTION TO SUBMIT LINK");
-
-    document.querySelectorAll('form').forEach(function (element) {
-        var action = element.getAttribute("action");
-        var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-        // console.log(action);
-        // if (action.indexOf("/") === 0 || arr.indexOf(action) > -1) { //this may need to be revised, not sure if this is the intention
-        element.setAttribute("action", action + "?" + location.search.substring(1));
-        //}
-    });
 
     // URL PARAMETERS GRAB
     var queryString = window.location.search;

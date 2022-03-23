@@ -1,5 +1,5 @@
 
-let versionVar = "020";
+let versionVar = "021";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -186,6 +186,7 @@ if (location.pathname == "/landing-test/form-test") {
     document.getElementById("FormpageURL").value = location.pathname;
     document.getElementById("UDEVICE").value = deviceInfo();
 
+    initApp();
 }
 
 function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
@@ -341,6 +342,7 @@ function getEngagementType() {
     return lob;
 }
 
+function initApp(){
 
 var _uf = _uf || {};
 _uf.domain = "ryder.com";
@@ -508,8 +510,17 @@ UtmForm = function () {
 }(), _uf = window._uf || {}, window.UtmForm = new UtmForm(_uf);
 
 
+}
 
-
+function waitSeconds(iMilliSeconds) {
+    var counter= 0
+        , start = new Date().getTime()
+        , end = 0;
+    while (counter < iMilliSeconds) {
+        end = new Date().getTime();
+        counter = end - start;
+    }
+}
 
 
 console.log("END FROM GIT " + versionVar);

@@ -1,3 +1,7 @@
+
+let versionVar = "016";
+console.log("START FROM GIT " + versionVar);
+
 /*
 
 
@@ -39,9 +43,6 @@ http://prev.new.ryder.com/form-test?utm_source=google
 
 */
 
-
-
-console.log("START FROM GIT 014");
 
 
     
@@ -316,4 +317,4 @@ document.querySelectorAll('form').forEach(function (element) {
     }
 
 
-console.log("END FROM GIT 014");
+console.log("END FROM GIT " + versionVar);

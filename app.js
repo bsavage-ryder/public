@@ -1,5 +1,5 @@
 
-let versionVar = "016";
+let versionVar = "017";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -133,7 +133,7 @@ document.querySelectorAll('form').forEach(function (element) {
         form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
         form.appendChild(br.cloneNode());
         
-        /* 
+        /* DecisionTime
             values will be one of the following:
                 - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
                     - Visit Eloqua Landing Page
@@ -145,7 +145,8 @@ document.querySelectorAll('form').forEach(function (element) {
                         - Canada UVS Browse
                 - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
         */
-                form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
+        form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
+        
         form.appendChild(br.cloneNode());
 
         var subBtn = document.createElement("input");
@@ -162,7 +163,7 @@ document.querySelectorAll('form').forEach(function (element) {
         form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
         form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
 
-        /* 
+        /* EngagementType
             values will be one of the following:
                 - ContactMe
                 - Promo - completed form on lease promo page
@@ -172,9 +173,11 @@ document.querySelectorAll('form').forEach(function (element) {
                 - Blog
         */
         form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", "ContactMe"));
+        // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
+
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
 
-        /* 
+        /* LoB
             values will be one of the following:
                 - ryder.com = 
                 - lease if on lease page
@@ -184,7 +187,7 @@ document.querySelectorAll('form').forEach(function (element) {
                 - ryder.com/solutions/dedicated-transportation
                 - ryder.com/technology-innovations
         */
-        form.appendChild(createFormEl("LoB", "LoB", "hidden", ""));
+        form.appendChild(createFormEl("LoB", "LoB", "hidden", lineOfBusiness()));
 
 
         form.appendChild(createFormEl("source", "source", "hidden", ""));
@@ -192,7 +195,6 @@ document.querySelectorAll('form').forEach(function (element) {
         form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
         form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
 
-        // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
         document.getElementById("LoB").value = document.location.pathname.split("/")[1];
         document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
         document.getElementById("IREFERRER").value = getCookie("__lotl");
@@ -316,5 +318,15 @@ document.querySelectorAll('form').forEach(function (element) {
         }
     }
 
+    function get lineOfBusiness(){
+        let lob = "";
+        lob = (location.pathname.includes("preventive-maintenance")) ? "preventive-maintenance" : "unknown";
+        lob = (location.pathname.includes("supply-chain-management")) ? "supply-chain-management" : "unknown";
+        lob = (location.pathname.includes("dedicated-transportation")) ? "dedicated-transportation" : "unknown";
+        lob = (location.pathname.includes("technology-innovations")) ? "technology-innovations" : "unknown";
+        lob = (location.pathname.includes("used-trucks")) ? "used-trucks" : "unknown";
+        lob = (location.pathname.includes("form-test")) ? "form-test" : "unknown";
+        return lob;
+    }
 
 console.log("END FROM GIT " + versionVar);

@@ -58,7 +58,20 @@ console.log("START FROM GIT 010");
         form.appendChild(br.cloneNode());
         form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
         form.appendChild(br.cloneNode());
-        form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
+        
+        /* 
+            values will be one of the following:
+                - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
+                    - Visit Eloqua Landing Page
+                    - Visit High Value Website Page 
+                        - Contact Us
+                    - Visit Website
+                        - Blog, Solutions, Canada, UVS Browse Inventory, Rental Promo
+                        - Rental Reservations
+                        - Canada UVS Browse
+                - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
+        */
+                form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
         form.appendChild(br.cloneNode());
 
         var subBtn = document.createElement("input");
@@ -74,7 +87,17 @@ console.log("START FROM GIT 010");
         form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
         form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
         form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
-        form.appendChild(createFormEl("EngagementType", "", "hidden", "contact me"));
+
+        /* 
+            values will be one of the following:
+                - ContactMe
+                - Promo
+                - Event Attendee
+                - Event
+                - Download
+                - Blog
+        */
+        form.appendChild(createFormEl("EngagementType", "", "hidden", "ContactMe"));
         form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
         form.appendChild(createFormEl("LoB", "LoB", "hidden", ""));
         form.appendChild(createFormEl("source", "source", "hidden", ""));

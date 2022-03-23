@@ -1,5 +1,5 @@
 
-let versionVar = "100";
+let versionVar = "101";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -227,6 +227,7 @@ console.log("                 - Build Form");
     }
 
     function getCookie(cookieName) {
+        console.log("                 - RUN getCookie " + cookieName);
         var name = cookieName + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
@@ -238,6 +239,7 @@ console.log("                 - Build Form");
 
     // Logic for Warehouse Gated
     function getsfid() {
+        console.log("                 - RUN getsfid ");
         var sfid_gdn = "7014X000002P58iQAC";
         var sfid_psearch = "7014X000002P59MQAS";
         var sfid_linkedin = "7014X000002P5A0QAK";
@@ -278,6 +280,7 @@ console.log("                 - Build Form");
     _elqQ.push(['elqGetCustomerGUID']);
 
     function deviceInfo() {
+        console.log("                 - RUN deviceInfo ");
         if (window.navigator.userAgent.match(/Mobile/i)
             || window.navigator.userAgent.match(/iPhone/i)
             || window.navigator.userAgent.match(/iPod/i)
@@ -299,6 +302,7 @@ console.log("                 - Build Form");
     }
 
     function getlineOfBusiness(){
+        console.log("                 - RUN getlineOfBusiness ");
         /* LoB
             values will be one of the following:
                 - ryder.com = 
@@ -320,6 +324,7 @@ console.log("                 - Build Form");
     }
 
     function getEngagementType(){
+        console.log("                 - RUN getEngagementType ");
         /* EngagementType
             values will be one of the following:
                 - ContactMe

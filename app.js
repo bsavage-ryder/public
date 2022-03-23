@@ -434,23 +434,6 @@ function getsfid() {
 
 var timerId = null, timeout = 5;
 
-function WaitUntilCustomerGUIDIsRetrieved() {
-    if (!!(timerId)) {
-        if (timeout == 0) {
-            return;
-        }
-        if (typeof this.GetElqCustomerGUID === 'function') {
-            document.forms["copyOf2021USELQUVSRTLForm-1645212545248"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
-            return;
-        }
-        timeout -= 1;
-    }
-    timerId = setTimeout("WaitUntilCustomerGUIDIsRetrieved()", 500);
-    return;
-}
-window.onload = WaitUntilCustomerGUIDIsRetrieved;
-_elqQ.push(['elqGetCustomerGUID']);
-
 function deviceInfo() {
     if (window.navigator.userAgent.match(/Mobile/i)
         || window.navigator.userAgent.match(/iPhone/i)
@@ -510,6 +493,23 @@ function getEngagementType() {
                 (location.pathname.includes("Blog")) ? "Blog" : "ContactMe";
     return lob;
 }
+
+function WaitUntilCustomerGUIDIsRetrieved() {
+    if (!!(timerId)) {
+        if (timeout == 0) {
+            return;
+        }
+        if (typeof this.GetElqCustomerGUID === 'function') {
+            document.forms["copyOf2021USELQUVSRTLForm-1645212545248"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
+            return;
+        }
+        timeout -= 1;
+    }
+    timerId = setTimeout("WaitUntilCustomerGUIDIsRetrieved()", 500);
+    return;
+}
+window.onload = WaitUntilCustomerGUIDIsRetrieved;
+_elqQ.push(['elqGetCustomerGUID']);
 
 
 

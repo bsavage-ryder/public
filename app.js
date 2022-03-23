@@ -1,5 +1,5 @@
 
-let versionVar = "021";
+let versionVar = "022";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -342,7 +342,9 @@ function getEngagementType() {
     return lob;
 }
 
-function initApp(){
+console.log(1);
+await new Promise(resolve => setTimeout(resolve, 5000)); // 3 sec
+console.log(2);
 
 var _uf = _uf || {};
 _uf.domain = "ryder.com";
@@ -510,17 +512,6 @@ UtmForm = function () {
 }(), _uf = window._uf || {}, window.UtmForm = new UtmForm(_uf);
 
 
-}
-
-function waitSeconds(iMilliSeconds) {
-    var counter= 0
-        , start = new Date().getTime()
-        , end = 0;
-    while (counter < iMilliSeconds) {
-        end = new Date().getTime();
-        counter = end - start;
-    }
-}
 
 
 console.log("END FROM GIT " + versionVar);

@@ -1,0 +1,69 @@
+<h1>The "LoB" or "Line of Business" Data-Parameter Requirements" is in DRAFT at this time.</h1>
+<div>
+    <h3>OVERVIEW</h3>
+    <p style="padding-left: 40px;">The general idea for the parameters is to capture the data from the user as they
+        enter, navigate, and exit the websites.</p>
+    <h3>MANAGING BUSINESS PARTNERS:</h3>
+    <p style="padding-left: 40px;">Amanda D Celestin</p>
+    <h3>STRATEGY:</h3>
+    <p style="padding-left: 40px;">This is used in Eloqua for identifying a user's interest area when someone fills out
+        a promo page this is used to tag it and we can score them higher versus someone who just filled out like blog or
+        a form on like a downloaded asset.</p>
+    <h3>REQUIREMENTS</h3>
+</div>
+<div>
+    <ol>
+        <li>The value shall be the domain name by default.</li>
+        <li>The value shall be "reservations" if the user completes a form on reservations.ryder.com page.</li>
+        <li>The value shall be "used-trucks" if the user completes a form on ryder.com/used-trucks page.</li>
+        <li>The value shall be "supply-chain-management" if the user completes a form on
+            ryder.com/supply-chain-management page.</li>
+        <li>The value shall be "dedicated-transportation" if the user completes a form on
+            ryder.com/solutions/dedicated-transportation page.</li>
+        <li>The value shall be "solutions" if the user completes a form on ryder.com/solutions page.</li>
+        <li>The value shall be "technology-innovations" if the user completes a form on ryder.com/technology-innovations
+            page.</li>
+        <li><span style="color: #800000;"><strong>A formula shall exists to identify the Lob</strong></span></li>
+        <li>
+            <div>
+                <div><span style="color: #800000;"><strong>The value shall include the path of the URL formatted as
+                            follows:</strong></span></div>
+                <div><span style="color: #800000;"><strong>example: ryder.com/solutions/dedicated-transportation becomes
+                            "solutions/dedicated-transportation"</strong></span></div>
+                <div> </div>
+            </div>
+        </li>
+    </ol>
+</div>
+<div>
+    <h3>PSEUDOCODE</h3>
+    <ul style="list-style-type: none;">
+        <li><b>BEGIN</b>
+            <ul style="list-style-type: none;">
+                <li><b>USER CLICKS</b> on paid advertisement</li>
+                <li><b>BROWSER NAVIGATES USER</b> to a Ryder Owned/Managed Web-Based Page/App</li>
+                <li><strong>IF</strong> User lands on Ryder Website Page <ul style="list-style-type: none;">
+                        <li><b></b><b>DO </b>add the "lob" input to the form as a hidden field</li>
+                        <li><strong>DO</strong> add the value of based on the requirement to the "lob" input hidden
+                            field</li>
+                    </ul>
+                </li>
+                <li><strong>ELSE</strong> <strong>IF </strong>User lands on Ryder Eloqua Page<ul
+                        style="list-style-type: none;">
+                        <li><strong>DO </strong>logic to be defined</li>
+                    </ul>
+                </li>
+                <li><strong>ELSE IF </strong>User lands on Ryder Eloqua Page<ul style="list-style-type: none;">
+                        <li><strong>DO </strong>logic to be defined</li>
+                    </ul>
+                </li>
+                <li><strong>ELSE </strong><br />
+                    <ul style="list-style-type: none;">
+                        <li><strong>DO </strong>logic to be defined</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b>END</b></li>
+    </ul>
+</div>

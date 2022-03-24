@@ -1,5 +1,5 @@
 
-const versionVar = "109";
+const versionVar = "108";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -115,8 +115,8 @@ function createOverlayContainer() {
 }
 
 
+;
 document.getElementById("formOverlayContainer").appendChild(createForm());
-
 function createForm() {
 
     // Create a form dynamically
@@ -193,14 +193,14 @@ function createForm() {
     form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
     form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
     form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
+    return form;
 
+}
     document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
     document.getElementById("IREFERRER").value = getCookie("__lotl");
     document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
     document.getElementById("FormpageURL").value = location.pathname;
     document.getElementById("UDEVICE").value = deviceInfo();
-
-}
 
 var _uf = _uf || {};
 _uf.domain = "ryder.com";

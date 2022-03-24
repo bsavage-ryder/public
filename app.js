@@ -71,6 +71,8 @@ document.querySelectorAll('form').forEach(function (element) {
 
     let ryderForm = (document.getElementById("formHolder") !== null)?document.getElementById("formHolder"):document.body;
     console.log("ryderForm: " + ryderForm);
+    xxx.innerHTML += "<h1>GOT IT</h1>";
+
 
     console.log("                 - Build Form");
     // Create styles for form

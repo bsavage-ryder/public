@@ -1,5 +1,5 @@
 
-const versionVar = "111";
+const versionVar = "112";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -74,7 +74,7 @@ if (document.getElementById("formHolder") !== null) {
     ryderForm.innerHTML += ryderForm.getAttribute("data-formid");
     ryderForm.innerHTML += ryderForm.getAttribute("data-formname");
     ryderForm.innerHTML += ryderForm.getAttribute("data-formaction");
-    ryderForm.innerHTML += createForm();
+    ryderForm.appendChild(createForm());
 } else {
     ryderForm.innerHTML += "<h1>GOT IT IN THE BODY</h1>";
     createOverlayContainer();

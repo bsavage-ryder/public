@@ -1,5 +1,5 @@
 
-const versionVar = "105";
+const versionVar = "106";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -71,7 +71,7 @@ document.querySelectorAll('form').forEach(function (element) {
 
     let ryderForm = (document.getElementById("formHolder") !== null)?document.getElementById("formHolder"):document.body;
     console.log("ryderForm: " + ryderForm);
-    xxx.innerHTML += "<h1>GOT IT</h1>";
+    ryderForm.innerHTML += "<h1>GOT IT</h1>";
 
 
     console.log("                 - Build Form");

@@ -70,10 +70,12 @@ document.querySelectorAll('form').forEach(function (element) {
 let ryderForm = (document.getElementById("formHolder") !== null) ? document.getElementById("formHolder") : document.body;
 console.log("ryderForm: " + ryderForm);
 if (document.getElementById("formHolder") !== null) {
+    /*
     ryderForm.innerHTML += "<h1>PLACING INSIDE FORM DIV</h1>";
     ryderForm.innerHTML += ryderForm.getAttribute("data-formid");
     ryderForm.innerHTML += ryderForm.getAttribute("data-formname");
     ryderForm.innerHTML += ryderForm.getAttribute("data-formaction");
+    */
     ryderForm.appendChild(createForm(ryderForm.getAttribute("data-formid"), ryderForm.getAttribute("data-formname"), ryderForm.getAttribute("data-formaction")));
 } else {
     ryderForm.innerHTML += "<h1>GOT IT IN THE BODY</h1>";

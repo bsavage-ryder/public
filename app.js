@@ -1,5 +1,5 @@
 
-const versionVar = "108";
+const versionVar = "109";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -81,7 +81,9 @@ if (document.getElementById("formHolder") !== null) {
 console.log("                 - Build Form");
 // Create styles for form
 //if (location.pathname == "/landing-test/form-test") {
-    createOverlayContainer();
+    
+createOverlayContainer();
+
 function createOverlayContainer() {
     // Create styles for form
     var styDiv = document.createElement('div');
@@ -113,87 +115,92 @@ function createOverlayContainer() {
 }
 
 
-// Create a form dynamically
-var form = document.createElement("form");
-form.setAttribute("method", "post");
-form.setAttribute("id", "form1913");
-form.setAttribute("class", "form js--module-formSniff js--module-formDefault  js--moduleLoader--loaded");
-form.setAttribute("name", "copyOf2021USELQUVSRTLForm-1645212545248");
-form.setAttribute("action", "https://s651376838.t.eloqua.com/e/f2");
+document.getElementById("formOverlayContainer").appendChild(createForm());
+
+function createForm() {
+
+    // Create a form dynamically
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("id", "form1913");
+    form.setAttribute("class", "form js--module-formSniff js--module-formDefault  js--moduleLoader--loaded");
+    form.setAttribute("name", "copyOf2021USELQUVSRTLForm-1645212545248");
+    form.setAttribute("action", "https://s651376838.t.eloqua.com/e/f2");
 
 
-var br = document.createElement("br");
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("firstName", "First Name", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("title", "Title", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("company", "Company", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("busPhone", "Business Phone", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("city", "City", "text", ""));
-form.appendChild(br.cloneNode());
-form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
-form.appendChild(br.cloneNode());
+    var br = document.createElement("br");
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("firstName", "First Name", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("title", "Title", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("company", "Company", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("busPhone", "Business Phone", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("city", "City", "text", ""));
+    form.appendChild(br.cloneNode());
+    form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
+    form.appendChild(br.cloneNode());
 
-/* DecisionTime
-    values will be one of the following:
-        - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
-            - Visit Eloqua Landing Page
-            - Visit High Value Website Page 
-                - Contact Us
-            - Visit Website
-                - Blog, Solutions, Canada, UVS Browse Inventory, Rental Promo
-                - Rental Reservations
-                - Canada UVS Browse
-        - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
-*/
-form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
+    /* DecisionTime
+        values will be one of the following:
+            - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
+                - Visit Eloqua Landing Page
+                - Visit High Value Website Page 
+                    - Contact Us
+                - Visit Website
+                    - Blog, Solutions, Canada, UVS Browse Inventory, Rental Promo
+                    - Rental Reservations
+                    - Canada UVS Browse
+            - ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]
+    */
+    form.appendChild(createFormDdl("DecisionTime", ["Ready Now", "Within Next Month", "1-3 Months", "3+ Months"]));
 
-form.appendChild(br.cloneNode());
+    form.appendChild(br.cloneNode());
 
-var subBtn = document.createElement("input");
-subBtn.setAttribute("type", "submit");
-subBtn.setAttribute("value", "Submit");
-form.appendChild(subBtn);
-form.appendChild(br.cloneNode());
-document.getElementById("formOverlayContainer").appendChild(form);
+    var subBtn = document.createElement("input");
+    subBtn.setAttribute("type", "submit");
+    subBtn.setAttribute("value", "Submit");
+    form.appendChild(subBtn);
+    form.appendChild(br.cloneNode());
+    
 
-form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
-form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));
-form.appendChild(createFormEl("elqCampaignId", "elqCampaignId", "hidden", ""));
-form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
-form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
-form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
+    form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
+    form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));
+    form.appendChild(createFormEl("elqCampaignId", "elqCampaignId", "hidden", ""));
+    form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
+    form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
+    form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
 
-/* EngagementType */
-form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", getEngagementType()));
-// document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
-
-
-form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
-
-/* LoB */
-form.appendChild(createFormEl("LoB", "LoB", "hidden", getlineOfBusiness()));
-// document.getElementById("LoB").value = document.location.pathname.split("/")[1];
+    /* EngagementType */
+    form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", getEngagementType()));
+    // document.getElementById("EngagementType").value = document.location.pathname.split("/")[2];
 
 
-form.appendChild(createFormEl("source", "source", "hidden", ""));
-form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
-form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
-form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
+    form.appendChild(createFormEl("LPID", "LPID", "hidden", ""));
 
-document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
-document.getElementById("IREFERRER").value = getCookie("__lotl");
-document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
-document.getElementById("FormpageURL").value = location.pathname;
-document.getElementById("UDEVICE").value = deviceInfo();
+    /* LoB */
+    form.appendChild(createFormEl("LoB", "LoB", "hidden", getlineOfBusiness()));
+    // document.getElementById("LoB").value = document.location.pathname.split("/")[1];
 
+
+    form.appendChild(createFormEl("source", "source", "hidden", ""));
+    form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
+    form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
+    form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
+
+    document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
+    document.getElementById("IREFERRER").value = getCookie("__lotl");
+    document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
+    document.getElementById("FormpageURL").value = location.pathname;
+    document.getElementById("UDEVICE").value = deviceInfo();
+
+}
 
 var _uf = _uf || {};
 _uf.domain = "ryder.com";

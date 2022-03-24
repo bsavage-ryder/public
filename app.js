@@ -1,5 +1,5 @@
 
-const versionVar = "110";
+const versionVar = "111";
 console.log("START FROM GIT " + versionVar);
 
 /*

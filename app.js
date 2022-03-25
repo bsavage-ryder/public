@@ -1,5 +1,5 @@
 
-const versionVar = "131";
+const versionVar = "132";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -613,19 +613,3 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
     return divContain;
 }
 
-
-<div class="form__input col-xs-12 col-md-6 ">
-    <label for="emailAddress" class="visuallyhidden">Email</label>
-    <input type="text" class="form-control " id="emailAddress" name="emailAddress" placeholder="Email *"
-        title="'Email'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200"
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" data-error-div="emailAddress-error"
-        data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-        <div id="emailAddress-error" class="form__validation" role="alert" aria-live="assertive"
-            style="display:none">
-            <i class="form__arrow_before"></i>
-            <i class="form__arrow_after"></i>
-            <p></p>
-        </div>
-        <label class="form-field-help" for="emailAddress"></label>
-</div>

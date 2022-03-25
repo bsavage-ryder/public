@@ -1,5 +1,5 @@
 
-const versionVar = "124";
+const versionVar = "125";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -126,7 +126,7 @@ function createForm(fID, fNAME, fACTION) {
 
     var br = document.createElement("br");
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("firstName", "First Name", "text", ""));
+    form.appendChild(createFormEl2222("firstName", "First Name", "text", ""));
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
     form.appendChild(br.cloneNode());
@@ -205,6 +205,10 @@ console.log("END FROM GIT " + versionVar);
 
 function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
     console.log("                       - ADD " + nameVar + " to form");
+
+    var divContain = document.createElement("div");
+
+
     var x = document.createElement("input");
     x.setAttribute("type", typeVar);
     x.setAttribute("name", nameVar);
@@ -217,6 +221,7 @@ function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
     // x.setAttribute("required", true);
     return x;
 }
+
 
 function createFormDdl(a, b) {
     console.log("                 - RUN createFormDdl ");
@@ -541,3 +546,95 @@ function gtmScript() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
+    console.log("                       - ADD " + nameVar + " to form");
+
+    var divContain = document.createElement("div");
+    divContain.setAttribute("class", "form__input col-xs-12 col-md-6");
+
+    var label = document.createElement("div");
+    label.setAttribute("for", "firstName");
+    label.setAttribute("class", "form__input col-xs-12 col-md-6");
+
+    divContain.appendChild(label);
+
+    var input = document.createElement("input");
+    input.setAttribute("type", typeVar);
+    input.setAttribute("name", nameVar);
+    input.setAttribute("id", nameVar);
+    input.setAttribute("value", valueVar);
+    if (typeVar !== "hidden") {
+        input.setAttribute("class","form-control");
+        input.setAttribute("placeholder", placeholderVar);
+        input.setAttribute("title", nameVar);
+        input.setAttribute("required",""); 
+        input.setAttribute("aria-required","'true'");
+        input.setAttribute("data-help-text","");
+        input.setAttribute("minlength","0");
+        input.setAttribute("maxlength","200"); 
+        input.setAttribute("pattern","[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?"); 
+        input.setAttribute("data-error-div",nameVar+"-error"); 
+        input.setAttribute("data-required-error-text","");
+        input.setAttribute("data-pattern-error-text","");
+        input.setAttribute("value",""); 
+        input.setAttribute("autocomplete","on");
+    }
+
+    divContain.appendChild(input);
+
+    // x.setAttribute("maxlength", 50);
+    // x.setAttribute("required", true);
+    return divContain;
+}
+
+
+
+<div class="form__input col-xs-12 col-md-6 ">
+    <label for="firstName" class="visuallyhidden">first-name</label>
+    <input type="text" class="form-control " id="firstName" name="firstName" placeholder="First name *" title="'first-name'" required="" 
+        aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?" 
+        data-error-div="firstName-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
+
+    <div id="firstName-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
+        <i class="form__arrow_before"></i>
+        <i class="form__arrow_after"></i>
+        <p></p>
+    </div>
+    <label class="form-field-help" for="firstName"></label>
+</div>

@@ -1,5 +1,5 @@
 
-const versionVar = "129";
+const versionVar = "130";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -126,11 +126,11 @@ function createForm(fID, fNAME, fACTION) {
 
     var br = document.createElement("br");
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl2222("firstName", "First Name", "text", "", "Please enter your first name.", "Only letters are allowed for your first name and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("firstName", "First Name", "text", "", "Please enter your first name.", "Only letters are allowed for your first name and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl2222("lastName", "Last Name", "text", "", "Please enter your last name.", "Only letters are allowed for your last name and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("lastName", "Last Name", "text", "", "Please enter your last name.", "Only letters are allowed for your last name and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl2222("emailAddress", "Email Address", "text", "", "Please enter your email address.", "Only letters are allowed for your email address and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("emailAddress", "Email Address", "text", "", "Please enter your email address.", "Only letters are allowed for your email address and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("title", "Title", "text", ""));
     form.appendChild(br.cloneNode());
@@ -586,8 +586,8 @@ function gtmScript() {
 
 
 
-function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
-    console.log("                       - ADD " + nameVar + " to form");
+function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
+    console.log("                       - ADD html5FormEl " + nameVar + " to form");
 
     var divContain = document.createElement("div");
     divContain.setAttribute("class", "form__input col-xs-12 col-md-6");
@@ -604,26 +604,26 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, 
     input.setAttribute("id", nameVar);
     input.setAttribute("value", valueVar);
     if (typeVar !== "hidden") {
-        input.setAttribute("class","form-control");
+        input.setAttribute("class", "form-control");
         input.setAttribute("placeholder", placeholderVar);
         input.setAttribute("title", nameVar);
-        input.setAttribute("required",""); 
-        input.setAttribute("aria-required","'true'");
-        input.setAttribute("data-help-text","");
-        input.setAttribute("minlength","0");
-        input.setAttribute("maxlength","200"); 
+        input.setAttribute("required", "");
+        input.setAttribute("aria-required", "'true'");
+        input.setAttribute("data-help-text", "");
+        input.setAttribute("minlength", "0");
+        input.setAttribute("maxlength", "200");
         let valPat = (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "phone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
-        input.setAttribute("pattern",valPat); 
-        input.setAttribute("data-error-div",nameVar+"-error"); 
-        input.setAttribute("data-required-error-text","");
-        input.setAttribute("data-pattern-error-text","");
-        input.setAttribute("value",""); 
-        input.setAttribute("autocomplete","on");
+        input.setAttribute("pattern", valPat);
+        input.setAttribute("data-error-div", nameVar + "-error");
+        input.setAttribute("data-required-error-text", "");
+        input.setAttribute("data-pattern-error-text", "");
+        input.setAttribute("value", "");
+        input.setAttribute("autocomplete", "on");
     }
     divContain.appendChild(input);
 
     var divError = document.createElement("div");
-    divError.setAttribute("id", nameVar+"-error");
+    divError.setAttribute("id", nameVar + "-error");
     divError.setAttribute("class", "form__validation");
     divError.setAttribute("role", "alert");
     divError.setAttribute("aria-live", "assertive");
@@ -650,21 +650,21 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, 
     // x.setAttribute("maxlength", 50);
     // x.setAttribute("required", true);
     return divContain;
-}   
+}
 
 
 <div class="form__input col-xs-12 col-md-6 ">
-<label for="emailAddress" class="visuallyhidden">Email</label>
-<input type="text" class="form-control " id="emailAddress" name="emailAddress" placeholder="Email *"
-    title="'Email'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200"
-    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" data-error-div="emailAddress-error"
-    data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
+    <label for="emailAddress" class="visuallyhidden">Email</label>
+    <input type="text" class="form-control " id="emailAddress" name="emailAddress" placeholder="Email *"
+        title="'Email'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" data-error-div="emailAddress-error"
+        data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
 
-<div id="emailAddress-error" class="form__validation" role="alert" aria-live="assertive"
-    style="display:none">
-    <i class="form__arrow_before"></i>
-    <i class="form__arrow_after"></i>
-    <p></p>
-</div>
-<label class="form-field-help" for="emailAddress"></label>
+        <div id="emailAddress-error" class="form__validation" role="alert" aria-live="assertive"
+            style="display:none">
+            <i class="form__arrow_before"></i>
+            <i class="form__arrow_after"></i>
+            <p></p>
+        </div>
+        <label class="form-field-help" for="emailAddress"></label>
 </div>

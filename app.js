@@ -1,5 +1,5 @@
 
-const versionVar = "136";
+const versionVar = "137";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -85,7 +85,7 @@ function createOverlayContainer() {
     console.log("                 - RUN createOverlayContainer ");
     // Create styles for form
     var styDiv = document.createElement('div');
-    styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
+    styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:#fff !important;position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;box-shadow: 4px 3px 8px 1px #969696;-webkit-box-shadow: 4px 3px 8px 1px #969696;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;border: black;border-radius: 20px;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
     document.body.appendChild(styDiv);
 
     // Create form Button for form
@@ -373,6 +373,72 @@ function getEngagementType() {
     return lob;
 }
 
+function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
+    console.log("                       - ADD html5FormEl " + nameVar + " to form");
+
+    var divContain = document.createElement("div");
+    divContain.setAttribute("class", "form__input col-xs-12 col-md-6");
+
+    var label = document.createElement("div");
+    label.setAttribute("for", "firstName");
+    label.setAttribute("class", "form__input col-xs-12 col-md-6");
+
+    divContain.appendChild(label);
+
+    var input = document.createElement("input");
+    input.setAttribute("type", typeVar);
+    input.setAttribute("name", nameVar);
+    input.setAttribute("id", nameVar);
+    input.setAttribute("value", valueVar);
+    if (typeVar !== "hidden") {
+        input.setAttribute("class", "form-control");
+        input.setAttribute("placeholder", placeholderVar);
+        input.setAttribute("title", nameVar);
+        input.setAttribute("required", "");
+        input.setAttribute("aria-required", "'true'");
+        input.setAttribute("data-help-text", "");
+        input.setAttribute("minlength", "0");
+        input.setAttribute("maxlength", "200");
+        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
+        input.setAttribute("pattern", valPat);
+        input.setAttribute("data-error-div", nameVar + "-error");
+        input.setAttribute("data-required-error-text", reqErTxt);
+        input.setAttribute("data-pattern-error-text", patErTxt);
+        input.setAttribute("value", "");
+        input.setAttribute("autocomplete", "on");
+    }
+    divContain.appendChild(input);
+
+    var divError = document.createElement("div");
+    divError.setAttribute("id", nameVar + "-error");
+    divError.setAttribute("class", "form__validation");
+    divError.setAttribute("role", "alert");
+    divError.setAttribute("aria-live", "assertive");
+    divError.setAttribute("style", "display:none");
+
+    var iOne = document.createElement("i");
+    iOne.setAttribute("class", "form__arrow_before");
+    divError.appendChild(iOne);
+
+    var iTwo = document.createElement("i");
+    iTwo.setAttribute("class", "form__arrow_after");
+    divError.appendChild(iTwo);
+
+    var p = document.createElement("p");
+    divError.appendChild(p);
+
+    divContain.appendChild(divError);
+
+    var label = document.createElement("i");
+    label.setAttribute("class", "form-field-help");
+    label.setAttribute("for", nameVar);
+    divContain.appendChild(label);
+
+    // x.setAttribute("maxlength", 50);
+    // x.setAttribute("required", true);
+    return divContain;
+}
+
 function gtmScript() {
 
     console.log("                 - RUN gtmScript ");
@@ -546,70 +612,4 @@ function gtmScript() {
 
 
 
-
-function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
-    console.log("                       - ADD html5FormEl " + nameVar + " to form");
-
-    var divContain = document.createElement("div");
-    divContain.setAttribute("class", "form__input col-xs-12 col-md-6");
-
-    var label = document.createElement("div");
-    label.setAttribute("for", "firstName");
-    label.setAttribute("class", "form__input col-xs-12 col-md-6");
-
-    divContain.appendChild(label);
-
-    var input = document.createElement("input");
-    input.setAttribute("type", typeVar);
-    input.setAttribute("name", nameVar);
-    input.setAttribute("id", nameVar);
-    input.setAttribute("value", valueVar);
-    if (typeVar !== "hidden") {
-        input.setAttribute("class", "form-control");
-        input.setAttribute("placeholder", placeholderVar);
-        input.setAttribute("title", nameVar);
-        input.setAttribute("required", "");
-        input.setAttribute("aria-required", "'true'");
-        input.setAttribute("data-help-text", "");
-        input.setAttribute("minlength", "0");
-        input.setAttribute("maxlength", "200");
-        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
-        input.setAttribute("pattern", valPat);
-        input.setAttribute("data-error-div", nameVar + "-error");
-        input.setAttribute("data-required-error-text", reqErTxt);
-        input.setAttribute("data-pattern-error-text", patErTxt);
-        input.setAttribute("value", "");
-        input.setAttribute("autocomplete", "on");
-    }
-    divContain.appendChild(input);
-
-    var divError = document.createElement("div");
-    divError.setAttribute("id", nameVar + "-error");
-    divError.setAttribute("class", "form__validation");
-    divError.setAttribute("role", "alert");
-    divError.setAttribute("aria-live", "assertive");
-    divError.setAttribute("style", "display:none");
-
-    var iOne = document.createElement("i");
-    iOne.setAttribute("class", "form__arrow_before");
-    divError.appendChild(iOne);
-
-    var iTwo = document.createElement("i");
-    iTwo.setAttribute("class", "form__arrow_after");
-    divError.appendChild(iTwo);
-
-    var p = document.createElement("p");
-    divError.appendChild(p);
-
-    divContain.appendChild(divError);
-
-    var label = document.createElement("i");
-    label.setAttribute("class", "form-field-help");
-    label.setAttribute("for", nameVar);
-    divContain.appendChild(label);
-
-    // x.setAttribute("maxlength", 50);
-    // x.setAttribute("required", true);
-    return divContain;
-}
 

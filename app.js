@@ -1,5 +1,5 @@
 
-const versionVar = "125";
+const versionVar = "126";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -621,20 +621,4 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
     // x.setAttribute("maxlength", 50);
     // x.setAttribute("required", true);
     return divContain;
-}
-
-
-
-<div class="form__input col-xs-12 col-md-6 ">
-    <label for="firstName" class="visuallyhidden">first-name</label>
-    <input type="text" class="form-control " id="firstName" name="firstName" placeholder="First name *" title="'first-name'" required="" 
-        aria-required="'true'" data-help-text="" minlength="0" maxlength="200" pattern="[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?" 
-        data-error-div="firstName-error" data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
-
-    <div id="firstName-error" class="form__validation" role="alert" aria-live="assertive" style="display:none">
-        <i class="form__arrow_before"></i>
-        <i class="form__arrow_after"></i>
-        <p></p>
-    </div>
-    <label class="form-field-help" for="firstName"></label>
-</div>
+}   

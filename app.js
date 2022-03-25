@@ -1,5 +1,5 @@
 
-const versionVar = "127";
+const versionVar = "128";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -624,18 +624,19 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
     divError.setAttribute("role", "alert");
     divError.setAttribute("aria-live", "assertive");
     divError.setAttribute("style", "display:none");
-    divContain.appendChild(divError);
 
     var iOne = document.createElement("i");
     iOne.setAttribute("class", "form__arrow_before");
-    divContain.appendChild(iOne);
+    divError.appendChild(iOne);
 
     var iTwo = document.createElement("i");
     iTwo.setAttribute("class", "form__arrow_after");
-    divContain.appendChild(iTwo);
+    divError.appendChild(iTwo);
 
     var p = document.createElement("p");
-    divContain.appendChild(p);
+    divError.appendChild(p);
+
+    divContain.appendChild(divError);
 
     var label = document.createElement("i");
     label.setAttribute("class", "form-field-help");

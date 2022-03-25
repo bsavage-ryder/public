@@ -1,5 +1,5 @@
 
-const versionVar = "133";
+const versionVar = "134";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -125,27 +125,15 @@ function createForm(fID, fNAME, fACTION) {
 
 
     var br = document.createElement("br");
-    form.appendChild(br.cloneNode());
     form.appendChild(html5FormEl("firstName", "First Name", "text", "", "Please enter your first name.", "Only letters are allowed for your first name and it is requierd to submit the form"));
-    form.appendChild(br.cloneNode());
     form.appendChild(html5FormEl("lastName", "Last Name", "text", "", "Please enter your last name.", "Only letters are allowed for your last name and it is requierd to submit the form"));
-    form.appendChild(br.cloneNode());
     form.appendChild(html5FormEl("emailAddress", "Email Address", "text", "", "Please enter your email address.", "Only letters are allowed for your email address and it is requierd to submit the form"));
-    form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("title", "Title", "text", ""));
-    form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("company", "Company", "text", ""));
-    form.appendChild(br.cloneNode());
+    form.appendChild(html5FormEl("title", "Title", "text", "", "", "Please enter your title.", "Only letters are allowed and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("company", "Company", "text", "", "Please enter your Company.", "Only letters are allowed for your Company and it is requierd to submit the form"));
     form.appendChild(html5FormEl("busPhone", "Business Phone", "text", "", "Please format your phone number, ex. 1112223333", "10-digit phone required. Please format your phone number, ex. 1112223333"));
-
-
-
-
-    form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("city", "City", "text", ""));
-    form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("zipPostal", "Zip Code", "text", ""));
-    form.appendChild(br.cloneNode());
+    form.appendChild(html5FormEl("city", "City", "text", "", "Please enter your city.", "Only letters are allowed for your city and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("city", "City", "text", "", "Please enter your city.", "Only letters are allowed for your city and it is requierd to submit the form"));
+    form.appendChild(html5FormEl("zipPostal", "Zip Code", "text", "", "Please enter your Zip Code.", "Only letters are allowed for your Zip Code and it is requierd to submit the form"));
 
     /* DecisionTime
         values will be one of the following:
@@ -573,7 +561,7 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         input.setAttribute("data-help-text", "");
         input.setAttribute("minlength", "0");
         input.setAttribute("maxlength", "200");
-        let valPat = (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "phone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
+        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
         input.setAttribute("pattern", valPat);
         input.setAttribute("data-error-div", nameVar + "-error");
         input.setAttribute("data-required-error-text", reqErTxt);

@@ -1,5 +1,5 @@
 
-const versionVar = "134";
+const versionVar = "135";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -151,12 +151,14 @@ function createForm(fID, fNAME, fACTION) {
 
     form.appendChild(br.cloneNode());
 
-    var subBtn = document.createElement("input");
+    var subBtn = document.createElement("button");
     subBtn.setAttribute("type", "submit");
     subBtn.setAttribute("value", "Submit");
+    subBtn.setAttribute("button", "button");
+    subBtn.setAttribute("class", "button");
+    subBtn.setAttribute("data-text", "submit");
     form.appendChild(subBtn);
     form.appendChild(br.cloneNode());
-
 
     form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
     form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));

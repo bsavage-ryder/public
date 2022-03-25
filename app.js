@@ -1,5 +1,5 @@
 
-const versionVar = "120";
+const versionVar = "121";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -188,6 +188,7 @@ function createForm(fID, fNAME, fACTION) {
     form.appendChild(createFormEl("source", "source", "hidden", ""));
     form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
     form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
+    form.appendChild(createFormEl("deviceDetailed", "deviceDetailed", "hidden", deviceInfo()));
     // form.appendChild(createFormEl("UBRIANTEST", "UBRIANTEST", "hidden", ""));
     return form;
 
@@ -196,7 +197,7 @@ document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page
 document.getElementById("IREFERRER").value = getCookie("__lotl");
 document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
 document.getElementById("FormpageURL").value = location.pathname;
-
+document.getElementById("UDEVICE").value = deviceInfo();
 
 
 console.log("END FROM GIT " + versionVar);
@@ -540,7 +541,3 @@ function gtmScript() {
 
 
 
-
-
-
-document.getElementById("UDEVICE").value = deviceInfo();

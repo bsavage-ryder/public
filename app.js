@@ -1,5 +1,5 @@
 
-const versionVar = "117";
+const versionVar = "118";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -43,9 +43,6 @@ http://prev.new.ryder.com/form-test?utm_source=google
 
 */
 
-
-
-
 console.log("                 - RUN querySelectorAll for links");
 document.querySelectorAll('a').forEach(function (element) {
     var href = element.getAttribute("href");
@@ -66,7 +63,6 @@ document.querySelectorAll('form').forEach(function (element) {
     //}
 });
 
-
 let ryderForm = (document.getElementById("formHolder") !== null) ? document.getElementById("formHolder") : document.body;
 console.log("ryderForm: " + ryderForm);
 if (document.getElementById("formHolder") !== null) {
@@ -83,13 +79,8 @@ if (document.getElementById("formHolder") !== null) {
     document.getElementById("formOverlayContainer").appendChild(createForm("form1999", "copyOf2021USELQUVSRTLForm-999999999", "https://s651376838.t.eloqua.com/e/f2"));
 }
 
-console.log("                 - Build Form");
-// Create styles for form
-//if (location.pathname == "/landing-test/form-test") {
-
-
-
 function createOverlayContainer() {
+    console.log("                 - RUN createOverlayContainer ");
     // Create styles for form
     var styDiv = document.createElement('div');
     styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:rgba(0,0,0,.5);position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
@@ -119,10 +110,8 @@ function createOverlayContainer() {
 
 }
 
-
-;
-
 function createForm(fID, fNAME, fACTION) {
+    console.log("                 - RUN createForm ");
 
     // Create a form dynamically
     var form = document.createElement("form");
@@ -209,8 +198,6 @@ document.getElementById("UDEVICE").value = deviceInfo();
 
 
 console.log("END FROM GIT " + versionVar);
-//}
-
 
 
 function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
@@ -229,6 +216,7 @@ function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
 }
 
 function createFormDdl(a, b) {
+    console.log("                 - RUN createFormDdl ");
     var values = b;
     var select = document.createElement("select");
     select.name = a;
@@ -293,6 +281,7 @@ function getsfid() {
 var timerId = null, timeout = 5;
 
 function WaitUntilCustomerGUIDIsRetrieved() {
+    console.log("                 - RUN WaitUntilCustomerGUIDIsRetrieved ");
     if (!!(timerId)) {
         if (timeout == 0) {
             return;
@@ -375,6 +364,7 @@ function getEngagementType() {
 window.onload = gtmScript;
 
 function gtmScript() {
+    console.log("                 - RUN gtmScript ");
 
     var _uf = _uf || {};
     _uf.domain = "ryder.com";

@@ -1,5 +1,5 @@
 
-const versionVar = "130";
+const versionVar = "131";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -547,45 +547,6 @@ function gtmScript() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
     console.log("                       - ADD html5FormEl " + nameVar + " to form");
 
@@ -615,8 +576,8 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         let valPat = (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "phone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
         input.setAttribute("pattern", valPat);
         input.setAttribute("data-error-div", nameVar + "-error");
-        input.setAttribute("data-required-error-text", "");
-        input.setAttribute("data-pattern-error-text", "");
+        input.setAttribute("data-required-error-text", reqErTxt);
+        input.setAttribute("data-pattern-error-text", patErTxt);
         input.setAttribute("value", "");
         input.setAttribute("autocomplete", "on");
     }

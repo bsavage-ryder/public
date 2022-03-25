@@ -1,5 +1,5 @@
 
-const versionVar = "118";
+const versionVar = "119";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -78,6 +78,8 @@ if (document.getElementById("formHolder") !== null) {
     createOverlayContainer();
     document.getElementById("formOverlayContainer").appendChild(createForm("form1999", "copyOf2021USELQUVSRTLForm-999999999", "https://s651376838.t.eloqua.com/e/f2"));
 }
+
+gtmScript();
 
 function createOverlayContainer() {
     console.log("                 - RUN createOverlayContainer ");
@@ -361,9 +363,8 @@ function getEngagementType() {
     return lob;
 }
 
-window.onload = gtmScript;
-
 function gtmScript() {
+
     console.log("                 - RUN gtmScript ");
 
     var _uf = _uf || {};

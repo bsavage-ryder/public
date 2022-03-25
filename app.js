@@ -1,5 +1,5 @@
 
-const versionVar = "126";
+const versionVar = "127";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -128,7 +128,7 @@ function createForm(fID, fNAME, fACTION) {
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl2222("firstName", "First Name", "text", ""));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("lastName", "Last Name", "text", ""));
+    form.appendChild(createFormEl2222("lastName", "Last Name", "text", ""));
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
     form.appendChild(br.cloneNode());
@@ -615,8 +615,32 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
         input.setAttribute("value",""); 
         input.setAttribute("autocomplete","on");
     }
-
     divContain.appendChild(input);
+
+
+    var divError = document.createElement("div");
+    divError.setAttribute("id", nameVar+"-error");
+    divError.setAttribute("class", "form__validation");
+    divError.setAttribute("role", "alert");
+    divError.setAttribute("aria-live", "assertive");
+    divError.setAttribute("style", "display:none");
+    divContain.appendChild(divError);
+
+    var iOne = document.createElement("i");
+    iOne.setAttribute("class", "form__arrow_before");
+    divContain.appendChild(iOne);
+
+    var iTwo = document.createElement("i");
+    iTwo.setAttribute("class", "form__arrow_after");
+    divContain.appendChild(iTwo);
+
+    var p = document.createElement("p");
+    divContain.appendChild(p);
+
+    var label = document.createElement("i");
+    label.setAttribute("class", "form-field-help");
+    label.setAttribute("for", nameVar);
+    divContain.appendChild(label);
 
     // x.setAttribute("maxlength", 50);
     // x.setAttribute("required", true);

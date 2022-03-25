@@ -1,5 +1,5 @@
 
-const versionVar = "128";
+const versionVar = "129";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -126,17 +126,21 @@ function createForm(fID, fNAME, fACTION) {
 
     var br = document.createElement("br");
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl2222("firstName", "First Name", "text", ""));
+    form.appendChild(createFormEl2222("firstName", "First Name", "text", "", "Please enter your first name.", "Only letters are allowed for your first name and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl2222("lastName", "Last Name", "text", ""));
+    form.appendChild(createFormEl2222("lastName", "Last Name", "text", "", "Please enter your last name.", "Only letters are allowed for your last name and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("emailAddress", "Email Address", "text", ""));
+    form.appendChild(createFormEl2222("emailAddress", "Email Address", "text", "", "Please enter your email address.", "Only letters are allowed for your email address and it is requierd to submit the form"));
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("title", "Title", "text", ""));
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("company", "Company", "text", ""));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("busPhone", "Business Phone", "text", ""));
+    form.appendChild(createFormEl("busPhone", "Business Phone", "text", "", "Please format your phone number, ex. 1112223333", "10-digit phone required. Please format your phone number, ex. 1112223333"));
+
+
+
+
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("city", "City", "text", ""));
     form.appendChild(br.cloneNode());
@@ -582,7 +586,7 @@ function gtmScript() {
 
 
 
-function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
+function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
     console.log("                       - ADD " + nameVar + " to form");
 
     var divContain = document.createElement("div");
@@ -608,7 +612,8 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
         input.setAttribute("data-help-text","");
         input.setAttribute("minlength","0");
         input.setAttribute("maxlength","200"); 
-        input.setAttribute("pattern","[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?"); 
+        let valPat = (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "phone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
+        input.setAttribute("pattern",valPat); 
         input.setAttribute("data-error-div",nameVar+"-error"); 
         input.setAttribute("data-required-error-text","");
         input.setAttribute("data-pattern-error-text","");
@@ -616,7 +621,6 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
         input.setAttribute("autocomplete","on");
     }
     divContain.appendChild(input);
-
 
     var divError = document.createElement("div");
     divError.setAttribute("id", nameVar+"-error");
@@ -647,3 +651,20 @@ function createFormEl2222(nameVar, placeholderVar, typeVar, valueVar) {
     // x.setAttribute("required", true);
     return divContain;
 }   
+
+
+<div class="form__input col-xs-12 col-md-6 ">
+<label for="emailAddress" class="visuallyhidden">Email</label>
+<input type="text" class="form-control " id="emailAddress" name="emailAddress" placeholder="Email *"
+    title="'Email'" required="" aria-required="'true'" data-help-text="" minlength="0" maxlength="200"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" data-error-div="emailAddress-error"
+    data-required-error-text="" data-pattern-error-text="" value="" autocomplete="on">
+
+<div id="emailAddress-error" class="form__validation" role="alert" aria-live="assertive"
+    style="display:none">
+    <i class="form__arrow_before"></i>
+    <i class="form__arrow_after"></i>
+    <p></p>
+</div>
+<label class="form-field-help" for="emailAddress"></label>
+</div>

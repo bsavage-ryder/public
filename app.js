@@ -1,5 +1,5 @@
 
-const versionVar = "132";
+const versionVar = "133";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -136,7 +136,7 @@ function createForm(fID, fNAME, fACTION) {
     form.appendChild(br.cloneNode());
     form.appendChild(createFormEl("company", "Company", "text", ""));
     form.appendChild(br.cloneNode());
-    form.appendChild(createFormEl("busPhone", "Business Phone", "text", "", "Please format your phone number, ex. 1112223333", "10-digit phone required. Please format your phone number, ex. 1112223333"));
+    form.appendChild(html5FormEl("busPhone", "Business Phone", "text", "", "Please format your phone number, ex. 1112223333", "10-digit phone required. Please format your phone number, ex. 1112223333"));
 
 
 

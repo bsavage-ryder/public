@@ -1,5 +1,5 @@
 
-const versionVar = "123";
+const versionVar = "124";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -193,9 +193,9 @@ function createForm(fID, fNAME, fACTION) {
     return form;
 
 }
-document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
-document.getElementById("IREFERRER").value = getCookie("__lotl");
-document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
+// document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
+// document.getElementById("IREFERRER").value = getCookie("__lotl");
+// document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
 document.getElementById("FormpageURL").value = location.pathname;
 document.getElementById("UDEVICE").value = deviceInfo();
 

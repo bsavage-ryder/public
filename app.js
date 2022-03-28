@@ -1,5 +1,5 @@
-const versionVar = "143";
-const debug = false;
+
+const versionVar = "137";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -13,16 +13,16 @@ console.log("START FROM GIT " + versionVar);
     Sitecore Information:
 
 
-        https://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
+        http://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
 
-        https://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
+        http://miavrscorweb01:7676/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1&sc_lang=en
     
     Test Page Information:
 
         form-test - Ryder
-        https://prev.new.ryder.com/landing-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_device=ipohone_12&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE&utm_brianTest=Brian%20is%20testing%20this
+        http://prev.new.ryder.com/landing-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_device=ipohone_12&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE&utm_brianTest=Brian%20is%20testing%20this
 
-        https://prev.new.ryder.com/form-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_device=ipohone_12&VISITS=1&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE
+        http://prev.new.ryder.com/form-test?utm_source=google&utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&utm_content=usedtrucks&utm_term=C&utm_device=ipohone_12&VISITS=1&sfid=1111d000000xstBBBBQ&gclid=GCLID_VALUE&mcid=MCID_VALUE
         
         PARMS
             utm_source=google
@@ -36,35 +36,35 @@ console.log("START FROM GIT " + versionVar);
             &gclid=mcid-value-is-here 
             &mcid=mcid-value-is-here
 
-https://prev.new.ryder.com/form-test?utm_source=google
+http://prev.new.ryder.com/form-test?utm_source=google
 &utm_medium=cpc&utm_campaign=2021_UVS_Paid_Search_Brand_NO_PMT_59_days_AH_GoogleBing_LeadGen&UCONTENT=usedtrucks&utm_term=C
 &utm_brianTest=Brian%20is%20testing%20this&utm_device=ipohone_12&VISITS=1&sfid=1111d000000xstBBBBQ&GCLID=GCLID_VALUE&MCID=MCID_VALUE
 
 
 */
 
-if (debug) console.log("                 - RUN querySelectorAll for links");
+console.log("                 - RUN querySelectorAll for links");
 document.querySelectorAll('a').forEach(function (element) {
     var href = element.getAttribute("href");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-    // if (debug) console.log(href);
+    // console.log(href);
     if (href.indexOf("/") === 0 || arr.indexOf(href) > -1) { //this may need to be revised, not sure if this is the intention
         element.setAttribute("href", href + "?" + location.search.substring(1));
     }
 });
 
-if (debug) console.log("                 - RUN querySelectorAll for submit buttons");
+console.log("                 - RUN querySelectorAll for submit buttons");
 document.querySelectorAll('form').forEach(function (element) {
     var action = element.getAttribute("action");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-    // if (debug) console.log(action);
+    // console.log(action);
     // if (action.indexOf("/") === 0 || arr.indexOf(action) > -1) { //this may need to be revised, not sure if this is the intention
     element.setAttribute("action", action + "?" + location.search.substring(1));
     //}
 });
 
 let ryderForm = (document.getElementById("formHolder") !== null) ? document.getElementById("formHolder") : document.body;
-if (debug) console.log("ryderForm: " + ryderForm);
+console.log("ryderForm: " + ryderForm);
 if (document.getElementById("formHolder") !== null) {
     /*
     ryderForm.innerHTML += "<h1>PLACING INSIDE FORM DIV</h1>";
@@ -82,10 +82,10 @@ if (document.getElementById("formHolder") !== null) {
 gtmScript();
 
 function createOverlayContainer() {
-    if (debug) console.log("                 - RUN createOverlayContainer ");
+    console.log("                 - RUN createOverlayContainer ");
     // Create styles for form
     var styDiv = document.createElement('div');
-    styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:hsla(0,0%,100%,.5) !important;position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;box-shadow: 4px 3px 8px 1px #969696;-webkit-box-shadow: 4px 3px 8px 1px #969696;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;border: black;border-radius: 20px;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
+    styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:#fff !important;position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;box-shadow: 4px 3px 8px 1px #969696;-webkit-box-shadow: 4px 3px 8px 1px #969696;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;border: black;border-radius: 20px;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
     document.body.appendChild(styDiv);
 
     // Create form Button for form
@@ -113,7 +113,7 @@ function createOverlayContainer() {
 }
 
 function createForm(fID, fNAME, fACTION) {
-    if (debug) console.log("                 - RUN createForm ");
+    console.log("                 - RUN createForm ");
 
     // Create a form dynamically
     var form = document.createElement("form");
@@ -399,7 +399,7 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         input.setAttribute("data-help-text", "");
         input.setAttribute("minlength", "0");
         input.setAttribute("maxlength", "200");
-        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";//(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}
+        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
         input.setAttribute("pattern", valPat);
         input.setAttribute("data-error-div", nameVar + "-error");
         input.setAttribute("data-required-error-text", reqErTxt);

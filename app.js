@@ -1,4 +1,3 @@
-
 const versionVar = "142";
 const debug = false;
 console.log("START FROM GIT " + versionVar);

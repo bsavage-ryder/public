@@ -1,5 +1,6 @@
 
-const versionVar = "141";
+const versionVar = "142";
+const debug = false;
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -43,28 +44,28 @@ http://prev.new.ryder.com/form-test?utm_source=google
 
 */
 
-console.log("                 - RUN querySelectorAll for links");
+if (debug) console.log("                 - RUN querySelectorAll for links");
 document.querySelectorAll('a').forEach(function (element) {
     var href = element.getAttribute("href");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-    // console.log(href);
+    // if (debug) console.log(href);
     if (href.indexOf("/") === 0 || arr.indexOf(href) > -1) { //this may need to be revised, not sure if this is the intention
         element.setAttribute("href", href + "?" + location.search.substring(1));
     }
 });
 
-console.log("                 - RUN querySelectorAll for submit buttons");
+if (debug) console.log("                 - RUN querySelectorAll for submit buttons");
 document.querySelectorAll('form').forEach(function (element) {
     var action = element.getAttribute("action");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
-    // console.log(action);
+    // if (debug) console.log(action);
     // if (action.indexOf("/") === 0 || arr.indexOf(action) > -1) { //this may need to be revised, not sure if this is the intention
     element.setAttribute("action", action + "?" + location.search.substring(1));
     //}
 });
 
 let ryderForm = (document.getElementById("formHolder") !== null) ? document.getElementById("formHolder") : document.body;
-console.log("ryderForm: " + ryderForm);
+if (debug) console.log("ryderForm: " + ryderForm);
 if (document.getElementById("formHolder") !== null) {
     /*
     ryderForm.innerHTML += "<h1>PLACING INSIDE FORM DIV</h1>";
@@ -82,7 +83,7 @@ if (document.getElementById("formHolder") !== null) {
 gtmScript();
 
 function createOverlayContainer() {
-    console.log("                 - RUN createOverlayContainer ");
+    if (debug) console.log("                 - RUN createOverlayContainer ");
     // Create styles for form
     var styDiv = document.createElement('div');
     styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:hsla(0,0%,100%,.5) !important;position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;box-shadow: 4px 3px 8px 1px #969696;-webkit-box-shadow: 4px 3px 8px 1px #969696;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;border: black;border-radius: 20px;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
@@ -113,7 +114,7 @@ function createOverlayContainer() {
 }
 
 function createForm(fID, fNAME, fACTION) {
-    console.log("                 - RUN createForm ");
+    if (debug) console.log("                 - RUN createForm ");
 
     // Create a form dynamically
     var form = document.createElement("form");

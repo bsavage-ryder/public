@@ -1,5 +1,5 @@
 
-const versionVar = "138";
+const versionVar = "140";
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -168,14 +168,13 @@ function createForm(fID, fNAME, fACTION) {
     form.appendChild(divSubBtn);
 
 
-
-
     form.appendChild(createFormEl("elqFormName", "elqFormName", "hidden", "copyOf2021USELQUVSRTLForm-1645212545248"));
     form.appendChild(createFormEl("elqSiteId", "elqSiteId", "hidden", "651376838"));
     form.appendChild(createFormEl("elqCampaignId", "elqCampaignId", "hidden", ""));
     form.appendChild(createFormEl("ILANDPAGE", "", "hidden", ""));
     form.appendChild(createFormEl("IREFERRER", "IREFERRER", "hidden", ""));
     form.appendChild(createFormEl("LREFERRER", "LREFERRER", "hidden", ""));
+
 
     /* EngagementType */
     form.appendChild(createFormEl("EngagementType", "EngagementType", "hidden", getEngagementType()));
@@ -197,9 +196,11 @@ function createForm(fID, fNAME, fACTION) {
     return form;
 
 }
+
 // document.getElementById("ILANDPAGE").value = getCookie("_uc_initial_landing_page");
 // document.getElementById("IREFERRER").value = getCookie("__lotl");
 // document.getElementById("LREFERRER").value = getCookie("_uc_last_referrer");
+
 document.getElementById("FormpageURL").value = location.pathname;
 document.getElementById("UDEVICE").value = deviceInfo();
 
@@ -399,7 +400,8 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         input.setAttribute("data-help-text", "");
         input.setAttribute("minlength", "0");
         input.setAttribute("maxlength", "200");
-        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
+        let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "(\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
+        // (\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}
         input.setAttribute("pattern", valPat);
         input.setAttribute("data-error-div", nameVar + "-error");
         input.setAttribute("data-required-error-text", reqErTxt);

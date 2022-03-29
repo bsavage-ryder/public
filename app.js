@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.5";
+const versionVar = "1.0.0.6";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -561,6 +561,7 @@ function gtmScript() {
             null == options && (options = {}),
                 this._utmParamsMap = {},
                 this._utmParamsMap.utm_source = options.utm_source_field || "USOURCE",
+                this._utmParamsMap.source = options.source || "source",
                 this._utmParamsMap.utm_medium = options.utm_medium_field || "UMEDIUM",
                 this._utmParamsMap.utm_campaign = options.utm_campaign_field || "UCAMPAIGN",
                 this._utmParamsMap.utm_content = options.utm_content_field || "UCONTENT",

@@ -1,5 +1,5 @@
 
-const versionVar = "001";
+const versionVar = "1.0.0.1";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -54,7 +54,7 @@ document.querySelectorAll('a').forEach(function (element) {
     }
 });
 
-console.log("                 - RUN querySelectorAll for submit buttons");
+if (debug) console.log("                 - RUN querySelectorAll for submit buttons");
 document.querySelectorAll('form').forEach(function (element) {
     var action = element.getAttribute("action");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];
@@ -65,7 +65,7 @@ document.querySelectorAll('form').forEach(function (element) {
 });
 
 let ryderForm = (document.getElementById("formHolder") !== null) ? document.getElementById("formHolder") : document.body;
-console.log("ryderForm: " + ryderForm);
+if (debug) console.log("ryderForm: " + ryderForm);
 if (document.getElementById("formHolder") !== null) {
     /*
     ryderForm.innerHTML += "<h1>PLACING INSIDE FORM DIV</h1>";
@@ -83,7 +83,7 @@ if (document.getElementById("formHolder") !== null) {
 gtmScript();
 
 function createOverlayContainer() {
-    console.log("                 - RUN createOverlayContainer ");
+    if (debug) console.log("                 - RUN createOverlayContainer ");
     // Create styles for form
     var styDiv = document.createElement('div');
     styDiv.innerHTML = '<style>div#formOverlayBGContainer{display:none;background:#fff !important;position:fixed!important;z-index:9000;left:0;top:0;bottom:0;right:0;width:100%;box-shadow: 4px 3px 8px 1px #969696;-webkit-box-shadow: 4px 3px 8px 1px #969696;transition:background .7s cubic-bezier(.55,.085,.68,.53)}div#formOverlayContainer{top:4.5rem;height:fit-content;border: black;border-radius: 20px;position:absolute!important;z-index:9001;background:#fff;background:hsla(0,0%,100%,.9);bottom:18px;bottom:1.5rem;left:0;margin:auto;overflow:auto;right:0;top:72px;-ms-transform:translateX(10%);transform:translateX(10%);width:90%;transition:transform .7s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53);margin-top:auto;opacity:1;-ms-transform:translateX(0);transform:translateX(0);transition:transform .5s cubic-bezier(.55,.085,.68,.53),opacity .7s cubic-bezier(.55,.085,.68,.53),background .7s cubic-bezier(.55,.085,.68,.53)}</style>';
@@ -114,7 +114,7 @@ function createOverlayContainer() {
 }
 
 function createForm(fID, fNAME, fACTION) {
-    console.log("                 - RUN createForm ");
+    if (debug) console.log("                 - RUN createForm ");
 
     // Create a form dynamically
     var form = document.createElement("form");
@@ -206,11 +206,11 @@ document.getElementById("FormpageURL").value = location.pathname;
 document.getElementById("UDEVICE").value = deviceInfo();
 
 
-console.log("END FROM GIT " + versionVar);
+if (debug) console.log("END FROM GIT " + versionVar);
 
 
 function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
-    console.log("                       - ADD " + nameVar + " to form");
+    if (debug) console.log("                       - ADD " + nameVar + " to form");
 
     var divContain = document.createElement("div");
 
@@ -230,7 +230,7 @@ function createFormEl(nameVar, placeholderVar, typeVar, valueVar) {
 
 
 function createFormDdl(a, b) {
-    console.log("                 - RUN createFormDdl ");
+    if (debug) console.log("                 - RUN createFormDdl ");
     var values = b;
     var select = document.createElement("select");
     select.name = a;
@@ -259,7 +259,7 @@ if (sfid != null) {
 }
 
 function getCookie(cookieName) {
-    console.log("                 - RUN getCookie " + cookieName);
+    if (debug) console.log("                 - RUN getCookie " + cookieName);
     var name = cookieName + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -271,7 +271,7 @@ function getCookie(cookieName) {
 
 // Logic for Warehouse Gated
 function getsfid() {
-    console.log("                 - RUN getsfid ");
+    if (debug) console.log("                 - RUN getsfid ");
     var sfid_gdn = "7014X000002P58iQAC";
     var sfid_psearch = "7014X000002P59MQAS";
     var sfid_linkedin = "7014X000002P5A0QAK";
@@ -295,7 +295,7 @@ function getsfid() {
 var timerId = null, timeout = 5;
 
 function WaitUntilCustomerGUIDIsRetrieved() {
-    console.log("                 - RUN WaitUntilCustomerGUIDIsRetrieved ");
+    if (debug) console.log("                 - RUN WaitUntilCustomerGUIDIsRetrieved ");
     if (!!(timerId)) {
         if (timeout == 0) {
             return;
@@ -313,7 +313,7 @@ window.onload = WaitUntilCustomerGUIDIsRetrieved;
 _elqQ.push(['elqGetCustomerGUID']);
 
 function deviceInfo() {
-    console.log("                 - RUN deviceInfo ");
+    if (debug) console.log("                 - RUN deviceInfo ");
     if (window.navigator.userAgent.match(/Mobile/i)
         || window.navigator.userAgent.match(/iPhone/i)
         || window.navigator.userAgent.match(/iPod/i)
@@ -335,7 +335,7 @@ function deviceInfo() {
 }
 
 function getlineOfBusiness() {
-    console.log("                 - RUN getlineOfBusiness ");
+    if (debug) console.log("                 - RUN getlineOfBusiness ");
     /* LoB
         values will be one of the following:
             - ryder.com = 
@@ -357,7 +357,7 @@ function getlineOfBusiness() {
 }
 
 function getEngagementType() {
-    console.log("                 - RUN getEngagementType ");
+    if (debug) console.log("                 - RUN getEngagementType ");
     /* EngagementType
         values will be one of the following:
             - ContactMe
@@ -376,7 +376,7 @@ function getEngagementType() {
 }
 
 function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patErTxt) {
-    console.log("                       - ADD html5FormEl " + nameVar + " to form");
+    if (debug) console.log("                       - ADD html5FormEl " + nameVar + " to form");
 
     var divContain = document.createElement("div");
     divContain.setAttribute("class", "form__input col-xs-12 col-md-6");
@@ -444,7 +444,7 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
 
 function gtmScript() {
 
-    console.log("                 - RUN gtmScript ");
+    if (debug) console.log("                 - RUN gtmScript ");
 
     var _uf = _uf || {};
     _uf.domain = "ryder.com";

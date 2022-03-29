@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.3";
+const versionVar = "1.0.0.4";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -399,8 +399,10 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         input.setAttribute("required", "");
         input.setAttribute("aria-required", "'true'");
         input.setAttribute("data-help-text", "");
-        input.setAttribute("minlength", "0");
-        input.setAttribute("maxlength", "200");
+        let valMin = (nameVar == "zipPostal") ? "5" : (nameVar == "emailAddress") ? "8" : (nameVar == "busPhone") ? "10" : "200";
+        input.setAttribute("minlength", valMin);
+        let valMax = (nameVar == "zipPostal") ? "10" : (nameVar == "emailAddress") ? "100" : (nameVar == "busPhone") ? "10" : "200";
+        input.setAttribute("maxlength", valMax);
         let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "\d{10}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
         // (\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}
         input.setAttribute("pattern", valPat);

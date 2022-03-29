@@ -1,5 +1,6 @@
 
-const versionVar = "142";
+const versionVar = "001";
+const debug = false;
 console.log("START FROM GIT " + versionVar);
 
 /*
@@ -43,7 +44,7 @@ http://prev.new.ryder.com/form-test?utm_source=google
 
 */
 
-console.log("                 - RUN querySelectorAll for links");
+if (debug) console.log("                 - RUN querySelectorAll for links");
 document.querySelectorAll('a').forEach(function (element) {
     var href = element.getAttribute("href");
     var arr = ["ryder.com", "ryder-drivers.jobs", "usedtrucks.ryder.com", "investors.ryder.com", "reservations.ryder.com"];

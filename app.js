@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.4";
+const versionVar = "1.0.0.5";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -405,7 +405,7 @@ function html5FormEl(nameVar, placeholderVar, typeVar, valueVar, reqErTxt, patEr
         input.setAttribute("maxlength", valMax);
         let valPat = (nameVar == "zipPostal") ? "((?!(0))[0-9]{5})" : (nameVar == "emailAddress") ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" : (nameVar == "busPhone") ? "\d{10}" : "[a-zA-Z]+(?:(?:\. |, |[' -])[a-zA-Z]+)*(\.)?";
         // (\d{1}[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}
-        input.setAttribute("pattern", valPat);
+        if (nameVar !== "busPhone") input.setAttribute("pattern", valPat);
         input.setAttribute("data-error-div", nameVar + "-error");
         input.setAttribute("data-required-error-text", reqErTxt);
         input.setAttribute("data-pattern-error-text", patErTxt);

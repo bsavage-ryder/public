@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.6";
+const versionVar = "1.0.0.7";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -189,7 +189,7 @@ function createForm(fID, fNAME, fACTION) {
     // document.getElementById("LoB").value = document.location.pathname.split("/")[1];
 
 
-    form.appendChild(createFormEl("source", "source", "hidden", ""));
+    // form.appendChild(createFormEl("source", "source", "hidden", ""));
     form.appendChild(createFormEl("VehicleID", "VehicleID", "hidden", ""));
     form.appendChild(createFormEl("FormpageURL", "FormpageURL", "hidden", ""));
     form.appendChild(createFormEl("deviceDetailed", "deviceDetailed", "hidden", deviceInfo()));

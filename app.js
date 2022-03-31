@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.7";
+const versionVar = "1.0.0.8";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -75,7 +75,6 @@ if (document.getElementById("formHolder") !== null) {
     */
     ryderForm.appendChild(createForm(ryderForm.getAttribute("data-formid"), ryderForm.getAttribute("data-formname"), ryderForm.getAttribute("data-formaction")));
 } else {
-    ryderForm.innerHTML += "<h1>GOT IT IN THE BODY</h1>";
     createOverlayContainer();
     document.getElementById("formOverlayContainer").appendChild(createForm("form1913", "copyOf2021USELQUVSRTLForm-1645212545248", "https://s651376838.t.eloqua.com/e/f2"));
 }

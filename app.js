@@ -1,5 +1,5 @@
 
-const versionVar = "1.0.0.9";
+const versionVar = "1.0.1.0";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
 
@@ -13,7 +13,7 @@ console.log("START FROM GIT " + versionVar);
     // Replace with the Site Key you got when registering the site for reCAPTCHA v3
     var siteKey = '6Le4oDcfAAAAAI92YbBG89M9KFrsh6J1wik1CZZF';
     // Replace with your server-side origin (just the https and domain name).
-    var serverSideOrigin = 'https://sgtm.ryder.com';
+    var serverSideOrigin = 'https://prev.new.ryder.com';
     // Replace this with the action type
     // See: https://developers.google.com/recaptcha/docs/v3#actions
     var action = 'page';

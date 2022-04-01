@@ -1,7 +1,51 @@
 
-const versionVar = "1.0.0.8";
+const versionVar = "1.0.0.9";
 const debug = false;
 console.log("START FROM GIT " + versionVar);
+
+
+
+
+
+
+
+(function() {
+    // Replace with the Site Key you got when registering the site for reCAPTCHA v3
+    var siteKey = '6Le4oDcfAAAAAI92YbBG89M9KFrsh6J1wik1CZZF';
+    // Replace with your server-side origin (just the https and domain name).
+    var serverSideOrigin = 'https://sgtm.ryder.com';
+    // Replace this with the action type
+    // See: https://developers.google.com/recaptcha/docs/v3#actions
+    var action = 'page';
+
+    // The following callback is invoked with the bot score as a function argument.
+    // Feel free to change the dataLayer.push() to your liking.
+    // Note! The callback is only invoked if you've configured the Server container
+    // Client template to return a response back to the browser.
+    var callback = function(score) {
+      window.dataLayer.push({
+        event: 'recaptcha',
+        recaptchaScore: score
+      });
+    };
+
+    if (window.grecaptcha && typeof window.grecaptcha.ready === 'function') {
+      window.grecaptcha.ready(function() {
+        window.grecaptcha.execute(siteKey, {action: action}).then(function(token) {
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = true;
+          xhr.open('POST', serverSideOrigin + '/recaptcha?token=' + token, true);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              var response = JSON.parse(xhr.responseText);
+              if (response.score) callback(response.score);
+            }
+          };
+          xhr.send();
+        });
+      });
+    }
+  })();
 
 /*
 

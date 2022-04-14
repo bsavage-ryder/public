@@ -206,7 +206,7 @@ function createForm(fID, fNAME, fACTION) {
     subBtn.setAttribute("type", "submit");
     subBtn.setAttribute("value", "Submit");
     subBtn.setAttribute("button", "button");
-    subBtn.setAttribute("class", "button");
+    subBtn.setAttribute("class", "button subBtn");
     subBtn.setAttribute("data-text", "submit");
     divSubBtn.appendChild(subBtn);
     form.appendChild(divSubBtn);

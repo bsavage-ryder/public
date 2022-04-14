@@ -136,7 +136,7 @@ function createOverlayContainer() {
     var div = document.createElement('div');
     div.className = 'formTstMsg';
     div.id = 'formTstMsg';
-    div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:20px; font-size: 18px !important;';
+    div.style.cssText = 'position: fixed; z-index: 99999999; height: 36px; width: 280px; bottom:200px; right: 10px; font-size: 18px !important;';
     div.innerHTML = '<button class="button--connect js--module-overlayLink js--moduleLoader--loaded">FORM TEST BUTTON</button>';
     document.body.appendChild(div);
     document.getElementById("formTstMsg").addEventListener("click", function () {
